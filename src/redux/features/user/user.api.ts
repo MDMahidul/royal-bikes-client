@@ -8,7 +8,7 @@ const userApi = baseApi.injectEndpoints({
         method: "GET",
         url: `/user/me`,
         headers: {
-          Authorization: `${token}`,
+          Authorization: `Bearer ${token}`,
         },
       }),
       providesTags: ["user"],
@@ -18,7 +18,7 @@ const userApi = baseApi.injectEndpoints({
         method: "PUT",
         url: `/user/me`,
         headers: {
-          Authorization: `${token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: { user: data },
       }),

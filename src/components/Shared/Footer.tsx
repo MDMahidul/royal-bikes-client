@@ -14,8 +14,8 @@ const Footer = () => {
           <div>
             <div className="flex justify-center sm:justify-start items-center gap-x-4">
               <img className="w-20 sm:w-28" src={logo} alt="" />
-              <p className="text-white font-robotoSlab text-xl sm:text-2xl md:text-4xl font-bold">
-                ROYAL BIKES
+              <p className="text-white font-robotoSlab text-xl sm:text-2xl md:text-4xl font-bold capitalize">
+                royal bikes
               </p>
             </div>
             <p className="text-sm mt-6 text-gray-300 text-center sm:text-start">
@@ -30,7 +30,7 @@ const Footer = () => {
                   <FaPhone className="text-secondary h-[18px] w-[18px]" />
                 </div>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-100 text-sm ml-4"
                 >
                   <small className="block">Tel</small>
@@ -42,7 +42,7 @@ const Footer = () => {
                   <FaEnvelope className="text-secondary h-[18px] w-[18px]" />
                 </div>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-100 text-sm ml-4"
                 >
                   <small className="block">Mail</small>
@@ -54,7 +54,7 @@ const Footer = () => {
                   <FaEnvelope className="text-secondary h-[18px] w-[18px]" />
                 </div>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-gray-100 text-sm ml-4"
                 >
                   <small className="block">Address</small>

@@ -58,7 +58,7 @@ const NavbarItems = () => {
         <Link to="/">
           <div className="flex justify-center items-center gap-x-2">
             <img src={logo} className="w-12 md:w-16" alt="madridita sports" />
-            <p className="md:text-[23px] font-bold  dark:text-white hidden sm:block">
+            <p className="md:text-[23px] font-bold  dark:text-white hidden sm:block font-robotoSlab">
               Royal Bikes
             </p>
           </div>

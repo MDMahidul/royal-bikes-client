@@ -21,7 +21,7 @@ const Banner = () => {
       {/* Content */}
       <div className="relative hero-content flex justify-center items-center flex-col min-h-[730px] md:h-screen  gap-10">
         <SlideInFromLeft>
-          <h1 className="text-2xl font-bold capitalize sm:text-6xl leading-r text-white mb-5">
+          <h1 className="text-2xl font-bold capitalize sm:text-6xl leading-r text-white my-5">
             Your Adventure Starts Here
           </h1>
         </SlideInFromLeft>

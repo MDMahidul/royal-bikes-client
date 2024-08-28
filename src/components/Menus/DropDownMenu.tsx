@@ -15,8 +15,8 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { logOut, selectCurrentUser } from "@/redux/features/auth/authSlice";
 
 const DropdownMenu = () => {
-   const user = useAppSelector(selectCurrentUser);
-   const dispatch = useAppDispatch();
+  const user = useAppSelector(selectCurrentUser);
+  const dispatch = useAppDispatch();
   const [open, setOpen] = useState(false);
   const handleLogout = () => {
     dispatch(logOut());
@@ -55,11 +55,11 @@ const DropdownMenu = () => {
         >
           {!user && (
             <>
-              <Link to="/signin">
+              <Link to="/login">
                 <MenuOptions
                   setOpen={setOpen}
                   Icon={FaSignInAlt}
-                  text="Sign In"
+                  text="Login"
                 />
               </Link>
               <Link to="/signup">
@@ -71,39 +71,31 @@ const DropdownMenu = () => {
               </Link>
             </>
           )}
-          {user?.role === "superAdmin" || user?.role === "admin" ? (
-            <Link to="/dashboard">
-              <MenuOptions
-                setOpen={setOpen}
-                Icon={MdDashboard}
-                text="Dashboard"
-              />
-            </Link>
-          ) : null}
+
           {user && (
             <>
-              <Link to="/profile">
+              {" "}
+              <Link to="/dashboard">
                 <MenuOptions
                   setOpen={setOpen}
-                  Icon={FaUserAlt}
-                  text="Profile"
+                  Icon={MdDashboard}
+                  text="Dashboard"
                 />
               </Link>
-
               <MenuOptions
                 setOpen={setOpen}
                 Icon={FaRegBell}
                 text="Notification"
               />
-              <button onClick={handleLogout}>
-                <MenuOptions
-                  setOpen={setOpen}
-                  Icon={FaSignOutAlt}
-                  text="Sign Out"
-                />
-              </button>
             </>
           )}
+          <button onClick={handleLogout}>
+            <MenuOptions
+              setOpen={setOpen}
+              Icon={FaSignOutAlt}
+              text="Sign Out"
+            />
+          </button>
         </motion.ul>
       </motion.div>
     </div>
