@@ -3,7 +3,7 @@ import Facebook from "@/assets/social/facebook.png";
 import Youtube from "@/assets/social/youtube.png";
 import Instagram from "@/assets/social/instagram.png";
 import Twitter from "@/assets/social/twitter.png";
-import logo from "@/assets/logo/flogo.png";
+import logo from "@/assets/logo/ffflogo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -14,7 +14,7 @@ const Footer = () => {
           <div>
             <div className="flex justify-center sm:justify-start items-center gap-x-4">
               <img className="w-20 sm:w-28" src={logo} alt="" />
-              <p className="text-white font-noNotoSerif text-xl sm:text-2xl md:text-4xl font-bold">
+              <p className="text-white font-robotoSlab text-xl sm:text-2xl md:text-4xl font-bold">
                 ROYAL BIKES
               </p>
             </div>
@@ -27,7 +27,7 @@ const Footer = () => {
             <ul className="grid sm:grid-cols-2 mt-12 gap-2">
               <li className="flex items-center max-sm:mb-4">
                 <div className="bg-white h-8 w-8 rounded-full flex items-center justify-center shrink-0">
-                  <FaPhone className="text-primary h-[18px] w-[18px]" />
+                  <FaPhone className="text-secondary h-[18px] w-[18px]" />
                 </div>
                 <a
                   href="javascript:void(0)"
@@ -39,7 +39,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center max-sm:mb-4">
                 <div className="bg-white h-8 w-8 rounded-full flex items-center justify-center shrink-0">
-                  <FaEnvelope className="text-primary h-[18px] w-[18px]" />
+                  <FaEnvelope className="text-secondary h-[18px] w-[18px]" />
                 </div>
                 <a
                   href="javascript:void(0)"
@@ -51,7 +51,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center sm:mt-4">
                 <div className="bg-white h-8 w-8 rounded-full flex items-center justify-center shrink-0">
-                  <FaEnvelope className="text-primary h-[18px] w-[18px]" />
+                  <FaEnvelope className="text-secondary h-[18px] w-[18px]" />
                 </div>
                 <a
                   href="javascript:void(0)"
@@ -79,7 +79,7 @@ const Footer = () => {
                 />
                 <button
                   type="button"
-                  className="bg-[#00296b] text-white text-sm rounded-full px-4 py-2.5 tracking-wide"
+                  className="bg-secondary text-white text-sm rounded-full px-4 py-2.5 tracking-wide"
                 >
                   Subscribe
                 </button>

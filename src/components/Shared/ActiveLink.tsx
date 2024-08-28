@@ -15,7 +15,7 @@ const ActiveLink = ({ to, children }: TNavLinkProps) => {
         to={to}
         className={({ isActive }) =>
           isActive && match
-            ? "py-1 md:py-0 text-base block bg-primary text-white rounded px-2 md:px-0   md:rounded-none md:pb-1  md:text-primary font-bold md:dark:text-white  md:border-b-2 md:bg-transparent border-secondary "
+            ? "py-1 md:py-0 text-base block bg-primary text-white rounded px-2 md:px-0  md:rounded-none md:pb-1  md:text-primary font-bold md:dark:text-white  md:border-b-2 md:bg-transparent border-secondary "
             : "nav-item"
         }
       >

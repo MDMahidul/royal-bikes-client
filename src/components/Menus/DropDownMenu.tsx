@@ -11,11 +11,15 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import MenuOptions from "./MenuOptions";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { logOut, selectCurrentUser } from "@/redux/features/auth/authSlice";
 
 const DropdownMenu = () => {
-    const user=null;
+   const user = useAppSelector(selectCurrentUser);
+   const dispatch = useAppDispatch();
   const [open, setOpen] = useState(false);
   const handleLogout = () => {
+    dispatch(logOut());
   };
   return (
     <div className="flex items-center justify-center ">
@@ -47,9 +51,9 @@ const DropdownMenu = () => {
           initial={wrapperVariants.closed}
           variants={wrapperVariants}
           style={{ originY: "top", translateX: "-50%" }}
-          className="flex flex-col gap-2 p-2 rounded-lg bg-white  absolute top-[150%] left-[60%] w-36 overflow-hidden shadow-xl z-50"
+          className="flex flex-col gap-2 p-2 rounded-lg bg-white  absolute top-[150%] left-[60%] w-36 overflow-hidden shadow-xl"
         >
-        
+          {!user && (
             <>
               <Link to="/signin">
                 <MenuOptions
@@ -66,6 +70,8 @@ const DropdownMenu = () => {
                 />
               </Link>
             </>
+          )}
+          {user?.role === "superAdmin" || user?.role === "admin" ? (
             <Link to="/dashboard">
               <MenuOptions
                 setOpen={setOpen}
@@ -73,6 +79,8 @@ const DropdownMenu = () => {
                 text="Dashboard"
               />
             </Link>
+          ) : null}
+          {user && (
             <>
               <Link to="/profile">
                 <MenuOptions
@@ -95,6 +103,7 @@ const DropdownMenu = () => {
                 />
               </button>
             </>
+          )}
         </motion.ul>
       </motion.div>
     </div>
