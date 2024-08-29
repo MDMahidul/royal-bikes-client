@@ -11,7 +11,7 @@ import ZoomInEffect from "@/components/Animation/ZoomInEffect";
 const Banner = () => {
   return (
     <div
-      className="relative lg:min-h-screen 2xl:min-h-[730px] bg-cover bg-center"
+      className="relative lg:min-h-screen 2xl:min-h-[730px] bg-cover bg-center bg-fixed"
       style={{
         backgroundImage: `url(${bannerImage})`,
       }}
@@ -28,7 +28,7 @@ const Banner = () => {
         <form className="sm:w-full max-w-xl mx-auto ">
           <SlideInFromRight>
             <div className="flex">
-              <select className="block p-2.5  z-20 text-sm text-gray-900 bg-gray-50 rounded-s-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-transparent focus:border-white dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">
+              <select className="block p-2.5   text-sm text-gray-900 bg-gray-50 rounded-s-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-transparent focus:border-white dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">
                 <option value=""> Search By </option>
                 <option value="Diet"> Name </option>
                 <option value="Health-Care"> Model </option>
@@ -61,11 +61,12 @@ const Banner = () => {
             </SlideInFromRight>
             <div className="flex justify-center items-center gap-5">
               <ZoomInEffect>
-                <img className="w-40" src={bike2} alt="" />
-              </ZoomInEffect>
-              <ZoomInEffect>
                 <img className="w-40" src={bike} alt="" />
               </ZoomInEffect>
+              <ZoomInEffect>
+                <img className="w-40" src={bike2} alt="" />
+              </ZoomInEffect>
+
               <ZoomInEffect>
                 <img className="w-40" src={bike3} alt="" />
               </ZoomInEffect>

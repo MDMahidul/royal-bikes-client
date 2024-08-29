@@ -15,7 +15,7 @@ const UserMenu = () => {
           <span className="mx-4 font-medium">Profile</span>
         </NavLink>
         <NavLink
-          to="manage-products"
+          to="bikeslist"
           className={({ isActive }) =>
             `sidebar ${isActive ? "sidebar-active" : "text-white"}`
           }

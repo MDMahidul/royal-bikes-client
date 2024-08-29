@@ -5,11 +5,13 @@ import Footer from "../Shared/Footer";
 
 const MainLayout = () => {
     return (
-        <div>
-            <NavbarItems/>
-            <Outlet/>
-            <Footer/>
+      <div>
+        <NavbarItems />
+        <div >
+          <Outlet />
         </div>
+        <Footer />
+      </div>
     );
 };
 

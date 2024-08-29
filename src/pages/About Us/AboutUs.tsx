@@ -1,12 +1,250 @@
-import React from 'react';
+import SlideInFromLeft from "@/components/Animation/SlideFromLeft";
+import SlideInFromRight from "@/components/Animation/SlideFromRight";
+import logo from "@/assets/logo/ffflogo.png";
+import ParallaxHeader from "@/components/SectionHeader/ParallaxHeader";
+import imageOne from "@/assets/bikes/au.jpg";
+import imageTwo from "@/assets/bikes/au1.jpeg";
+import { SlCalender } from "react-icons/sl";
+import staffData from "@/assets/data/staffs.json";
+import FadeInUpAnimation from "@/components/Animation/FadeInUpAnimtaion";
+import StaffCard from "@/components/Cards/StaffCard";
+import Lottie from "lottie-react";
+import comuncation from "@/assets/data/com.json";
+import pin from "@/assets/data/pin.json";
 
 const AboutUs = () => {
-    return (
-        <div className='bg-red-500'>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit error laudantium sint voluptatum dignissimos! Perspiciatis fuga ratione dolor, quia id rem reiciendis aliquam minima amet autem, tempore illum excepturi ea quaerat, corporis soluta deserunt quibusdam eos impedit dicta quasi vel et! Perspiciatis quisquam cupiditate et fugiat maxime harum vitae enim, adipisci, unde aut, eligendi veritatis? Doloribus atque sequi ratione eos fugit accusamus, numquam ea repudiandae, molestiae fuga est fugiat debitis optio aliquam dolores officia enim doloremque! Perspiciatis aspernatur fuga veniam, eligendi quae ad non omnis ex nostrum quos dolores error quaerat aut maxime ab voluptas dolorem blanditiis natus reiciendis quo similique. Nesciunt, ipsum? Deleniti facilis nesciunt rem inventore autem consectetur minus officiis natus? Nulla magnam doloribus laborum fugit, hic in autem cum facilis molestiae sapiente amet dolore porro sunt. Quae quibusdam voluptas, quo maxime debitis voluptate, exercitationem asperiores minima consectetur natus labore quasi? Sint minima dolor, natus architecto quisquam tempora voluptatum adipisci esse accusantium, officia recusandae aliquam, ipsa odio magnam numquam incidunt corrupti consectetur minus facere reprehenderit sunt similique doloribus labore. Aperiam ipsum itaque doloremque necessitatibus. Explicabo eligendi tempora similique ducimus deleniti aspernatur iure odit quidem cum quia unde ut animi officiis dignissimos facilis possimus, recusandae magni minus accusantium illo exercitationem. Molestias esse laborum laudantium sapiente quo iure aliquam odio possimus ut ea laboriosam, consectetur sequi suscipit facere veniam? Obcaecati animi hic voluptates itaque accusantium natus quaerat, dolores esse quae modi similique et, aperiam cum ipsum provident possimus ex! At aspernatur nesciunt eos eveniet officiis blanditiis iure repellat, beatae quaerat incidunt harum ipsam omnis. Illum maiores assumenda ipsum aliquam consequuntur iste, qui quam molestias mollitia illo consectetur rem quo veritatis voluptates repellendus aliquid reiciendis sunt iusto, explicabo amet corrupti porro. Excepturi ipsam est, expedita aspernatur inventore consequuntur! Minima fugit, amet odit ullam nobis quasi assumenda eum quod natus consequuntur voluptate vitae perspiciatis molestias odio provident recusandae nihil nisi quaerat officiis commodi eius ipsam? Ipsum temporibus officiis vel suscipit illo deserunt doloremque assumenda voluptatum optio perferendis facere, iure fugiat eveniet maxime quae adipisci dolores quo dolorum laudantium ullam? Illo natus odit exercitationem reiciendis beatae iste ratione doloremque, distinctio laudantium ex cum deserunt, recusandae voluptatibus vel esse. Facere, deleniti nemo. Excepturi sint error molestias possimus voluptatibus repellendus laboriosam, blanditiis sapiente, earum nihil pariatur, cum ipsa? Tenetur, laboriosam maiores rerum dolorem facere voluptatum, officiis soluta molestias, voluptate dolorum porro quas optio expedita illum non sapiente. Reprehenderit adipisci deleniti ratione ab, sed amet animi facilis expedita minus porro hic quas nisi non doloremque temporibus nesciunt perferendis ipsa aperiam soluta minima? Nemo soluta voluptate at vero consequuntur dolores commodi mollitia possimus laboriosam, fugiat minima reprehenderit quis laudantium in inventore molestiae quod sunt odio eius obcaecati. Eligendi illum rerum et in dolorum commodi adipisci modi optio quo rem fugiat maiores doloremque, veritatis culpa quidem doloribus harum deleniti nostrum saepe consectetur voluptas aspernatur consequuntur eos. Magni aut repudiandae necessitatibus rem maiores facere sed cumque. Sit aliquid, corrupti, laboriosam obcaecati labore sed quia nihil doloremque corporis cupiditate quos incidunt illum et molestiae aperiam libero aut autem id quisquam expedita in molestias! Nobis deserunt eius quos excepturi? Dolore in eaque itaque inventore placeat a laudantium, harum, exercitationem illum amet ex magni iure nostrum accusantium quo enim sapiente optio! Eveniet assumenda animi beatae ea earum autem doloremque voluptas rem ratione. Inventore, atque nulla consequuntur ad earum nam perspiciatis rem veritatis qui eos voluptatum ab aut dolorum officia error porro deleniti saepe. Voluptate labore tempora itaque ipsam commodi ratione rerum fuga ab aspernatur repellendus officiis at esse inventore suscipit aperiam, laboriosam ea hic quos libero quo molestiae? Corrupti quos, nam itaque atque non magni nesciunt eaque aperiam sapiente praesentium libero doloremque aspernatur molestiae vitae adipisci placeat blanditiis labore ratione minus, consequatur impedit fuga. Voluptate in assumenda consequatur dolor animi saepe sit mollitia laboriosam nesciunt eveniet ullam laborum iusto expedita, perferendis tenetur. Porro minus eius repellendus nihil aperiam vero, magnam hic quae dolor non autem assumenda atque sed velit consequuntur alias labore odit? Voluptas ad reiciendis doloremque optio ducimus dignissimos tempora laborum? Vitae beatae veniam labore numquam eveniet molestiae possimus tempora deleniti. Est cumque labore obcaecati quidem veniam atque architecto enim velit repellendus autem suscipit praesentium quas eaque, magnam nisi aut quasi quo sunt quis doloremque illo fugiat cum delectus! Voluptatem reiciendis laboriosam quibusdam quisquam fuga quaerat quis ipsam ratione odio vero, laborum officiis ad ullam suscipit assumenda! Temporibus necessitatibus corporis incidunt distinctio laudantium reprehenderit laboriosam velit illo molestias. Et praesentium, delectus fuga rem illo perspiciatis cum similique quo. Laudantium hic quod exercitationem natus, possimus aliquam iusto itaque eveniet asperiores eius cupiditate fugit pariatur id aspernatur dolor quia quisquam temporibus facilis voluptatum enim assumenda qui optio, laboriosam recusandae? Nesciunt iste delectus eos expedita. Voluptatibus quod eos sequi natus quia voluptatem ratione obcaecati amet neque eum autem quibusdam ad modi, atque placeat dignissimos optio molestias laudantium assumenda veniam nesciunt repellendus enim velit! Dolorem, voluptas. A ipsa odit soluta? Nobis sapiente quia nemo, officiis hic cumque quas! Dicta velit facere esse vero fuga officiis quidem? Facilis reiciendis est, vel molestiae exercitationem minima excepturi dolore veritatis temporibus magni architecto ullam, voluptate dolor nostrum quo eius tempore, tenetur pariatur sunt necessitatibus illo fugiat ratione aut. Nesciunt ducimus reiciendis eaque deleniti cumque vel voluptatem impedit, harum exercitationem inventore. Nostrum doloribus omnis ducimus voluptas, id veniam quos in dolor eveniet officia praesentium iste consectetur enim libero, eius ea et quibusdam reprehenderit atque est cupiditate! Cum mollitia, vero eveniet expedita, aut tenetur repellat a, eligendi eum blanditiis earum rem nihil dignissimos totam ullam ut repudiandae deserunt quo minus doloremque dolorem incidunt. Facere unde id culpa, fuga, autem vitae architecto natus atque aspernatur quas voluptates soluta est quis pariatur, sed inventore quidem? Debitis ea eos unde delectus eaque illum minus, fuga et dolores fugit, reprehenderit numquam ullam reiciendis explicabo quis nemo repellendus. Repellat facere totam, tenetur suscipit exercitationem est odit at et cumque laboriosam dolore incidunt porro fugit amet, ut excepturi asperiores! Laudantium, possimus? Id quis tempore, ipsum nobis, veritatis repellat exercitationem voluptatem ullam unde quod porro est sed mollitia maiores nulla necessitatibus, fugit dolores suscipit esse asperiores hic deleniti.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus qui magni dignissimos veritatis consequuntur nam quibusdam eos debitis unde ipsam modi saepe, natus porro? Deserunt expedita commodi rem impedit cum, ipsa ducimus temporibus facere aspernatur beatae totam ea cupiditate explicabo sequi nulla, sapiente optio libero ratione odio hic. Dignissimos provident molestiae culpa dolorem modi doloribus ipsa fugiat ut voluptas in, ullam laudantium sed aliquid voluptatem at itaque. Natus accusantium asperiores voluptatum, fuga minus ipsum odio veritatis. Id doloremque doloribus labore amet incidunt debitis iusto quas, quod nihil laudantium? Ex iusto, sit unde voluptates corrupti facilis impedit assumenda fuga a molestias, autem non rerum delectus similique harum alias iste asperiores explicabo dolore culpa magnam sed recusandae facere! Sit tenetur neque nesciunt, quaerat vero quae officiis est adipisci nulla? Laborum iste recusandae quos, reiciendis voluptatem dolores eius quod, numquam ipsum obcaecati rem cumque autem doloribus vel itaque possimus culpa? Veniam quaerat ducimus, voluptas repellat illum sit quae obcaecati similique quos optio voluptatibus, temporibus laudantium vitae, fugiat modi. Laudantium illo reiciendis rerum commodi earum, natus fugit magnam ipsum voluptatibus asperiores tempora velit maiores adipisci, ipsa ipsam provident, ad aspernatur. Eligendi soluta facilis voluptates possimus culpa error nemo, ipsa fuga voluptas aspernatur pariatur odit nihil in voluptate quo consequuntur repudiandae consectetur autem tenetur deserunt nobis nisi neque unde! Laborum dolor facere dolorum et ea magni, saepe quaerat, consectetur voluptate suscipit, totam deserunt voluptatibus. Dicta deserunt quam, provident veniam aspernatur harum, quae nobis quia inventore doloribus obcaecati similique impedit dolore in sint esse. Corporis rerum facere tenetur! Perspiciatis, soluta quis repellat nam quibusdam magni cum fugit, necessitatibus facilis, quod sequi eligendi ad numquam. Ab cupiditate suscipit officiis maxime? Distinctio minus vitae molestiae sed, autem est aspernatur doloribus? Accusamus, enim pariatur. Eligendi sint voluptatibus libero enim odit officiis quisquam porro, magnam nihil inventore vero quidem. Quae voluptate at accusamus necessitatibus omnis eveniet debitis voluptatum assumenda quo eum dignissimos aperiam voluptatem architecto, voluptatibus incidunt error cupiditate deserunt reprehenderit exercitationem ipsum a similique minima! Repudiandae, voluptates odit, ducimus exercitationem ipsam atque molestias, sunt cum est animi eum harum molestiae. Fugiat quibusdam provident, corrupti nulla error voluptate deserunt officiis corporis commodi perspiciatis tempora alias molestiae, accusamus, harum nesciunt debitis sit impedit ipsam ut fugit eligendi eaque incidunt porro ipsum. Alias officiis aliquid error rerum veritatis exercitationem. Accusamus itaque facere ab dolore ad sint ea, expedita quia doloremque velit odit nesciunt repellendus qui, minima atque eius architecto mollitia molestias voluptates reprehenderit fugiat tempore. Delectus qui natus aliquam, vitae rem perferendis! Nam pariatur beatae neque, doloremque eveniet eum exercitationem, at similique voluptas corporis aperiam placeat natus eligendi culpa perferendis quae quos ratione recusandae asperiores quibusdam nobis illo laborum corrupti sint! Rem aperiam debitis, neque quibusdam officiis placeat ipsum nulla qui, recusandae optio nobis ad praesentium aliquid facere unde deleniti nostrum hic odio officia! Voluptatibus, esse iure! Ullam deleniti inventore animi aperiam quae ipsa necessitatibus exercitationem accusantium odio aspernatur, qui nostrum explicabo eius neque non laboriosam. Dolorum iusto repellendus culpa, facilis atque, vel ut voluptatum quis illo non neque optio ipsa sapiente?</p>
+  return (
+    <div className="py-10 md:py-16 ">
+      <ParallaxHeader heading="About Us" />
+      <div className="max-w-5xl mx-auto px-5">
+        <div className="dark:text-white py-5 font-medium">
+          <SlideInFromLeft>
+            <div className="flex flex-col md:flex-row items-center gap-5 md:gap-10 mt-10">
+              <img className="max-w-[150px]" src={logo} alt="" />
+              <p>
+                Founded in 2010, Royal Bikes began with a single location and a
+                handful of motorcycles. Over the years, we have grown
+                exponentially, expanding our fleet and opening new locations
+                across the country. What started as a small business driven by
+                passion has become a trusted name in motorcycle rentals,
+                recognized for our unwavering commitment to quality and service.
+              </p>
+            </div>
+          </SlideInFromLeft>
+          <SlideInFromLeft>
+            <div className="mb-10 mt-5">
+              At Royal Bikes, we are passionate about connecting adventurers
+              with the freedom of the open road. Our mission is to make the
+              thrill of riding accessible to everyone, from seasoned bikers to
+              those new to the experience. We believe in the power of
+              exploration and the joy that comes from discovering new places on
+              two wheels.
+            </div>
+          </SlideInFromLeft>
+          <div className="flex flex-col md:flex-row justify-between mb-10 md:mb-20 gap-10">
+            <div className=" md:w-1/2">
+              <SlideInFromLeft>
+                <h3 className="text-2xl font-semibold text-primary dark:text-white mb-3">
+                  Our Mission
+                </h3>
+                <p>
+                  To provide unparalleled motorcycle rental experiences that
+                  inspire adventure, foster community, and promote responsible
+                  riding. We are dedicated to offering a diverse fleet of
+                  meticulously maintained motorcycles, ensuring the highest
+                  levels of safety and reliability. Our commitment to
+                  exceptional customer service extends beyond the rental
+                  process, as we strive to create lasting memories and foster a
+                  sense of belonging among our riders. By providing affordable
+                  and accessible options, we empower individuals to explore the
+                  world around them and discover the transformative power of two
+                  wheels.
+                </p>
+              </SlideInFromLeft>
+            </div>
+            <div className="md:w-1/2">
+              <SlideInFromRight>
+                <img className="w-full" src={imageOne} alt="" />
+              </SlideInFromRight>
+            </div>
+          </div>
+          <div className="flex flex-col-reverse md:flex-row justify-between mb-10 md:mb-20 gap-10">
+            <div className="md:w-1/2">
+              <SlideInFromLeft>
+                <img className="w-full" src={imageTwo} alt="" />
+              </SlideInFromLeft>
+            </div>
+            <div className=" md:w-1/2">
+              <SlideInFromRight>
+                <h3 className="text-2xl font-semibold text-primary dark:text-white mb-3">
+                  Our Vision
+                </h3>
+                <p>
+                  To be the global leader in motorcycle rentals, recognized for
+                  our innovation, sustainability, and unwavering dedication to
+                  customer satisfaction. We envision a future where our company
+                  is synonymous with adventure, quality, and community. Through
+                  our commitment to responsible riding and environmental
+                  stewardship, we aim to contribute positively to the world and
+                  inspire others to embrace the joy and freedom of motorcycle
+                  travel. Our vision is to create a global network of riders who
+                  share our passion for exploration and who are empowered to
+                  make a positive impact on the world.
+                </p>
+              </SlideInFromRight>
+            </div>
+          </div>
+
+          <div className="mb-20">
+            <SlideInFromLeft>
+              <h3 className="text-2xl font-semibold text-primary dark:text-white mb-5">
+                Our Milestones
+              </h3>
+              <ol className="items-center md:flex">
+                <li className="relative mb-6 md:mb-0">
+                  <div className="flex items-center">
+                    <div className="z-10 flex items-center justify-center w-7 h-7 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+                      <SlCalender className="text-primary dark:text-white" />
+                    </div>
+                    <div className="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+                  </div>
+                  <div className="mt-3 sm:pe-8">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      Year 2010
+                    </h3>
+                    <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                      Grand Opeing
+                    </time>
+                    <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                      Established the company with a focus on providing
+                      top-notch motorcycles for enthusiasts.
+                    </p>
+                  </div>
+                </li>
+                <li className="relative mb-6 sm:mb-0">
+                  <div className="flex items-center">
+                    <div className="z-10 flex items-center justify-center w-7 h-7 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+                      <SlCalender className="text-primary dark:text-white" />
+                    </div>
+                    <div className="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+                  </div>
+                  <div className="mt-3 sm:pe-8">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      Year 2012
+                    </h3>
+                    <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                      Expanding
+                    </time>
+                    <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                      Expanded our fleet to include a wide variety of bikes,
+                      catering to different riding styles and preferences.
+                    </p>
+                  </div>
+                </li>
+                <li className="relative mb-6 sm:mb-0">
+                  <div className="flex items-center">
+                    <div className="z-10 flex items-center justify-center w-7 h-7 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+                      <SlCalender className="text-primary dark:text-white" />
+                    </div>
+                    <div className="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+                  </div>
+                  <div className="mt-3 sm:pe-8">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      Year 2018
+                    </h3>
+                    <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                      Live on Online
+                    </time>
+                    <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                      Launched our online booking platform, making it easier
+                      than ever for customers to reserve their dream bike.
+                    </p>
+                  </div>
+                </li>
+                <li className="relative mb-6 sm:mb-0">
+                  <div className="flex items-center">
+                    <div className="z-10 flex items-center justify-center w-7 h-7 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+                      <SlCalender className="text-primary dark:text-white" />
+                    </div>
+                    <div className="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+                  </div>
+                  <div className="mt-3 sm:pe-8">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      Year 2023
+                    </h3>
+                    <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                      Recognition
+                    </time>
+                    <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                      Achieved recognition as the most trusted motorcycle rental
+                      service in Bangladesh, thanks to our loyal customers and
+                      dedicated team.
+                    </p>
+                  </div>
+                </li>
+              </ol>
+            </SlideInFromLeft>
+          </div>
+          <div className="mb-20">
+            <SlideInFromRight>
+              <h3 className="text-2xl font-semibold text-primary dark:text-white mb-5">
+                Our Team Members
+              </h3>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 mx-auto w-11/12 md:w-full">
+                {staffData.staffs.map((staff, index) => (
+                  <FadeInUpAnimation key={staff.id} custom={index}>
+                    <StaffCard staff={staff} />
+                  </FadeInUpAnimation>
+                ))}
+              </div>
+            </SlideInFromRight>
+          </div>
+          <div className="">
+            <SlideInFromLeft>
+              <h3 className="text-2xl font-semibold text-primary dark:text-white mb-5">
+                Contact Us
+              </h3>
+            </SlideInFromLeft>
+            <div>
+              <div className="flex flex-col md:flex-row gap-8 justify-evenly items-center">
+                <SlideInFromLeft>
+                  <div className="flex flex-col justify-center items-center">
+                    <Lottie
+                      animationData={comuncation}
+                      loop={true}
+                      className="max-w-[80px] mb-2"
+                    />
+                    <div className="text-gray-600 dark:text-white font-medium text-center">
+                      <p>What's App: +88 01711-22334455 </p>
+                      <p>Hot Line: +88 09811-222333 </p>
+                      <p>Email: madridistasports@inqury.com </p>
+                    </div>
+                  </div>
+                </SlideInFromLeft>
+                <SlideInFromRight>
+                  <div className="flex flex-col justify-center items-center">
+                    <Lottie
+                      animationData={pin}
+                      loop={true}
+                      className="max-w-[80px] mb-2"
+                    />
+                    <div className="text-gray-600 dark:text-white font-medium text-center">
+                      <p>
+                        Road# 18, Block# D,
+                        <br /> House# 01, Ka-244,Progoti sarani,
+                        <br /> Baridhara, Dhaka, Bangladesh
+                      </p>
+                    </div>
+                  </div>
+                </SlideInFromRight>
+              </div>
+            </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default AboutUs;

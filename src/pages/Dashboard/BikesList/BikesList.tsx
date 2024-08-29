@@ -1,8 +1,13 @@
+import Container from "@/components/Container/Container";
+import DashboardHeader from "@/components/SectionHeader/DashboardHeader";
+
 const BikesList = () => {
     return (
-        <div>
-            
-        </div>
+      <div>
+        <Container>
+          <DashboardHeader title="Bikes List" />
+        </Container>
+      </div>
     );
 };
 

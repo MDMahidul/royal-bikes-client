@@ -5,11 +5,14 @@ import Instagram from "@/assets/social/instagram.png";
 import Twitter from "@/assets/social/twitter.png";
 import logo from "@/assets/logo/ffflogo.png";
 import { Link } from "react-router-dom";
+import bikes from '@/assets/bikes/bike1.webp';
+import SlideInFromRight from "../Animation/SlideFromRight";
+import SlideInFromLeft from "../Animation/SlideFromLeft";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="bg-gradient-to-r from-[#00293b] via-[#00296b] to-[#00293b] font-sans tracking-wide py-12 px-4 sm:px-16">
+    <div className="pt-5">
+      <footer className="bg-gradient-to-r from-[#00293b] via-[#00296b] to-[#00293b] font-sans tracking-wide py-12 px-4 sm:px-16 ">
         <div className="grid max-md-grid-cols-1 lg:grid-cols-2 gap-20">
           <div>
             <div className="flex justify-center sm:justify-start items-center gap-x-4">
@@ -29,10 +32,7 @@ const Footer = () => {
                 <div className="bg-white h-8 w-8 rounded-full flex items-center justify-center shrink-0">
                   <FaPhone className="text-secondary h-[18px] w-[18px]" />
                 </div>
-                <a
-                  href="#"
-                  className="text-gray-100 text-sm ml-4"
-                >
+                <a href="#" className="text-gray-100 text-sm ml-4">
                   <small className="block">Tel</small>
                   <strong>180-548-2588</strong>
                 </a>
@@ -41,10 +41,7 @@ const Footer = () => {
                 <div className="bg-white h-8 w-8 rounded-full flex items-center justify-center shrink-0">
                   <FaEnvelope className="text-secondary h-[18px] w-[18px]" />
                 </div>
-                <a
-                  href="#"
-                  className="text-gray-100 text-sm ml-4"
-                >
+                <a href="#" className="text-gray-100 text-sm ml-4">
                   <small className="block">Mail</small>
                   <strong>royalbikes@info.com</strong>
                 </a>
@@ -53,10 +50,7 @@ const Footer = () => {
                 <div className="bg-white h-8 w-8 rounded-full flex items-center justify-center shrink-0">
                   <FaEnvelope className="text-secondary h-[18px] w-[18px]" />
                 </div>
-                <a
-                  href="#"
-                  className="text-gray-100 text-sm ml-4"
-                >
+                <a href="#" className="text-gray-100 text-sm ml-4">
                   <small className="block">Address</small>
                   <strong>Khilkhet, Dhaka, Bangladesh</strong>
                 </a>
@@ -123,6 +117,18 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
+            <div className="mt-8 justify-center md:justify-start sm:mt-5 flex gap-5 items-center">
+              <SlideInFromLeft>
+                <img className="w-40" src={bikes} alt="" />
+              </SlideInFromLeft>
+              <SlideInFromRight>
+                <img
+                  className="w-40 transform scale-x-[-1]"
+                  src={bikes}
+                  alt=""
+                />
+              </SlideInFromRight>
+            </div>
           </div>
         </div>
         <div className="lg:flex lg:item-center mt-12">
