@@ -143,7 +143,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                to="#"
+                to="/bikes"
                 className="text-gray-300 hover:text-gray-100 text-sm hover:border-b transition-all duration-300"
               >
                 Bikes
@@ -151,7 +151,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                to="#"
+                to="about-us"
                 className="text-gray-300 hover:text-gray-100 text-sm hover:border-b transition-all duration-300"
               >
                 About Us
@@ -159,7 +159,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                to="#"
+                to="/terms-of-services"
                 className="text-gray-300 hover:text-gray-100 text-sm hover:border-b transition-all duration-300"
               >
                 Terms of Service
@@ -167,7 +167,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                to="#"
+                to="/privacy-policies"
                 className="text-gray-300 hover:text-gray-100 text-sm hover:border-b transition-all duration-300"
               >
                 Privacy Policy

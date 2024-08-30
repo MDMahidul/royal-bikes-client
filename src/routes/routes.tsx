@@ -7,6 +7,8 @@ import Profile from "@/pages/Dashboard/Profile/Profile";
 import HomePage from "@/pages/Home/HomePage";
 import Login from "@/pages/Login&SignUp/Login";
 import SignUp from "@/pages/Login&SignUp/SignUp";
+import PrivacyPolicies from "@/pages/Terms&Policy/PrivacyPolicies";
+import TermsConditions from "@/pages/Terms&Policy/TermsConditions";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "/bikes", element: <Bikes /> },
       { path: "/about-us", element: <AboutUs /> },
+      { path: "/terms-of-services", element: <TermsConditions /> },
+      { path: "/privacy-policies", element: <PrivacyPolicies /> },
     ],
   },
   {
@@ -29,15 +33,14 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: 
-        <DashboardLayout />,
+    element: <DashboardLayout />,
     children: [
       {
         index: true,
         element: <Profile />,
       },
       {
-        path: 'bikeslist',
+        path: "bikeslist",
         element: <BikesList />,
       },
     ],

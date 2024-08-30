@@ -16,10 +16,10 @@ const AboutUs = () => {
   return (
     <div className="py-10 md:py-16 ">
       <ParallaxHeader heading="About Us" />
-      <div className="max-w-5xl mx-auto px-5">
+      <div className="max-w-5xl mx-auto px-5 mt-5">
         <div className="dark:text-white py-5 font-medium">
           <SlideInFromLeft>
-            <div className="flex flex-col md:flex-row items-center gap-5 md:gap-10 mt-10">
+            <div className="flex flex-col md:flex-row items-center gap-5 md:gap-10 ">
               <img className="max-w-[150px]" src={logo} alt="" />
               <p>
                 Founded in 2010, Royal Bikes began with a single location and a
@@ -95,7 +95,7 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <div className="mb-20">
+          <div className="mb-10 md:mb-20">
             <SlideInFromLeft>
               <h3 className="text-2xl font-semibold text-primary dark:text-white mb-5">
                 Our Milestones
@@ -121,7 +121,7 @@ const AboutUs = () => {
                     </p>
                   </div>
                 </li>
-                <li className="relative mb-6 sm:mb-0">
+                <li className="relative mb-6 md:mb-0">
                   <div className="flex items-center">
                     <div className="z-10 flex items-center justify-center w-7 h-7 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
                       <SlCalender className="text-primary dark:text-white" />
@@ -141,7 +141,7 @@ const AboutUs = () => {
                     </p>
                   </div>
                 </li>
-                <li className="relative mb-6 sm:mb-0">
+                <li className="relative mb-6 md:mb-0">
                   <div className="flex items-center">
                     <div className="z-10 flex items-center justify-center w-7 h-7 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
                       <SlCalender className="text-primary dark:text-white" />
@@ -161,7 +161,7 @@ const AboutUs = () => {
                     </p>
                   </div>
                 </li>
-                <li className="relative mb-6 sm:mb-0">
+                <li className="relative mb-6 md:mb-0">
                   <div className="flex items-center">
                     <div className="z-10 flex items-center justify-center w-7 h-7 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
                       <SlCalender className="text-primary dark:text-white" />
@@ -185,7 +185,7 @@ const AboutUs = () => {
               </ol>
             </SlideInFromLeft>
           </div>
-          <div className="mb-20">
+          <div className="mb-10 md:mb-20">
             <SlideInFromRight>
               <h3 className="text-2xl font-semibold text-primary dark:text-white mb-5">
                 Our Team Members
