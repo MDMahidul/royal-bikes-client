@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Emily Johnson",
+    "review": "The best bike rental experience I've ever had! The bikes were in excellent condition, and the rental process was so smooth. Highly recommend!",
+    "avatar": "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Michael Thompson",
+    "review": "I rented a bike for a weekend trip, and it was perfect. The staff was friendly and helped me pick the right bike for my needs. I will definitely rent from here again.",
+    "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Samantha Lee",
+    "review": "Amazing service! The online booking was easy, and the bike was ready for me when I arrived. The bike itself was well-maintained and a pleasure to ride.",
+    "avatar": "https://randomuser.me/api/portraits/women/82.jpg"
+  },
+  {
+    "id": 4,
+    "name": "James Brown",
+    "review": "Great selection of bikes and affordable rates. The team was very professional and made sure I was comfortable with the bike before I set off. Highly satisfied!",
+    "avatar": "https://randomuser.me/api/portraits/men/75.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Olivia Martinez",
+    "review": "I was impressed by the quality of the bikes and the customer service. The rental process was straightforward, and I had a fantastic time exploring the city on two wheels.",
+    "avatar": "https://randomuser.me/api/portraits/women/82.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Daniel Walker",
+    "review": "Fantastic experience! The bikes were top-notch, and the staff went above and beyond to ensure I had everything I needed. Will definitely recommend to friends and family.",
+    "avatar": "https://randomuser.me/api/portraits/men/85.jpg"
+  }
+]

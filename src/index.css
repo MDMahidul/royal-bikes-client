@@ -81,25 +81,32 @@
       transform: rotate(0deg);
     }
   }
-  
+
   .nav-item {
     @apply block py-2 px-3 md:p-0  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:dark:hover:text-gray-200 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-base;
   }
 
-   .primary-button{
-    @apply bg-secondary px-4 md:px-8 py-2 sm:py-2 md:py-3 text-white text-sm md:text-[15px] font-semibold rounded-md hover:bg-[#e23232] transform transition-all duration-200 hover:shadow-xl disabled:bg-gray-500 disabled:hover:scale-100
+  .primary-button {
+    @apply bg-secondary px-4 md:px-8 py-2 sm:py-2 md:py-3 text-white text-sm md:text-[15px] font-semibold rounded-md hover:bg-[#e23232] transform transition-all duration-200 hover:shadow-xl disabled:bg-gray-500 disabled:hover:scale-100;
   }
 
- .add-input-field {
-    @apply bg-gray-50 border border-gray-200 shadow text-gray-900 text-sm rounded-lg block w-full p-2.5   dark:placeholder-gray-400 focus:border-transparent focus:ring-0;
+  .primary-button-white {
+    @apply bg-white px-4 md:px-8 py-2 sm:py-2 md:py-3 text-secondary text-sm md:text-[15px] font-semibold rounded-md hover:bg-gray-100 transform transition-all duration-200 hover:shadow-xl disabled:bg-gray-500 disabled:hover:scale-100;
   }
 
-  .floating-label{
-    @apply absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 dark:bg-gray-900 px-2 peer-focus:px-2  peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 rounded-full
+  .add-input-field {
+    @apply bg-gray-50 dark:bg-gray-500 border border-gray-200 shadow text-gray-900 dark:text-white text-sm rounded-lg block w-full p-2.5   dark:placeholder-gray-200 focus:border-transparent focus:ring-0;
   }
 
+  .floating-label {
+    @apply absolute text-sm text-gray-500 dark:text-gray-200 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 dark:bg-gray-500 px-2 peer-focus:px-2  peer-focus:dark:text-gray-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 rounded-full;
+  }
 
-    .sidebar {
+  .contact-card {
+    @apply flex flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white dark:bg-gray-600 shadow-lg;
+  }
+
+  .sidebar {
     @apply flex items-center px-4 py-2 mt-3  transition-colors duration-300 transform  hover:bg-secondary dark:text-white  hover:text-white rounded-lg;
   }
   .sidebar-active {

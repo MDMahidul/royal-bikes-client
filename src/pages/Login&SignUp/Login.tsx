@@ -2,7 +2,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import bannerImage from "@/assets/banner2.jpg";
 import { FieldValues, useForm } from "react-hook-form";
-import { useLoginMutation } from "@/redux/features/auth/auth.api";
+import { useLoginMutation } from "@/redux/api/auth/auth.api";
 import { ImSpinner9 } from "react-icons/im";
 import { toast } from "sonner";
 import { useAppDispatch } from "@/redux/hooks";
@@ -41,8 +41,8 @@ const Login = () => {
       });
       navigate("/");
     } catch (error: any) {
-      console.log(error.data?.errorSources[0].message);
-      toast.error(error.data?.errorSources[0]?.message, {
+      console.log(error.data?.errorMessages[0].message);
+      toast.error(error.data?.errorMessages[0]?.message, {
         duration: 2000,
         style: { padding: "10px" },
       });

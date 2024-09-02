@@ -17,11 +17,9 @@ const Banner = () => {
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-t from-gray-700 to-black opacity-60"></div>
-
-      {/* Content */}
       <div className="relative hero-content flex justify-center items-center flex-col min-h-[730px] md:h-screen  gap-10">
         <SlideInFromLeft>
-          <h1 className="text-2xl font-bold capitalize sm:text-6xl leading-r text-white my-5">
+          <h1 className="text-2xl font-bold capitalize sm:text-6xl leading-r text-white my-5 md:pt-28">
             Your Adventure Starts Here
           </h1>
         </SlideInFromLeft>
@@ -72,7 +70,7 @@ const Banner = () => {
               </ZoomInEffect>
             </div>
             <ZoomInEffect>
-              <button className="primary-button">Book a bike</button>
+              <button className="primary-button">Book Now</button>
             </ZoomInEffect>
           </div>
         </Container>

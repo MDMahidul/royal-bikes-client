@@ -12,7 +12,7 @@ const BikeCard = ({ bike }: TBikeProps) => {
     <div className="max-w-sm bg-white dark:bg-gray-500  shadow hover:shadow-lg rounded ">
       <div>
         <img
-          className="rounded-t-lg w-full"
+          className="rounded-t w-full"
           src="https://d56b293rhv8dp.cloudfront.net/vehicle_photos/12136/attachments/size550/IMG_0173_%281%29.jpg?1696374924"
           alt="BMW R 1250 GS"
         />
@@ -22,9 +22,9 @@ const BikeCard = ({ bike }: TBikeProps) => {
           <h5 className="text-sm font-medium text-gray-500 dark:text-white -mb-1">
             {brand}
           </h5>
-          <h3 className="text-xl font-bold text-gray-900">{name}</h3>
+          <h3 className="text-xl sm:text-lg md:text-xl font-bold text-gray-900">{name}</h3>
         </div>
-        <div className="bg-primary text-white px-2 py-1 absolute right-0 top-10">
+        <div className="bg-primary text-white px-2 py-1 absolute right-0 top-14">
           <span className="text-lg font-bold ">${pricePerHour}</span>
           <span className="text-sm font-medium ">/hour</span>
         </div>

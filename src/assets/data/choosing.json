@@ -1,0 +1,39 @@
+{
+  "choosingData": [
+    {
+      "id": 1,
+      "title": "1. Wide Selection of Premium Bikes: ",
+      "description": "Explore our extensive inventory of bikes, ranging from high-performance sports models to comfortable touring bikes. Whether you're an experienced rider seeking a thrill or a casual rider looking for a leisurely cruise, we have the perfect bike to match your style and needs."
+    },
+    {
+      "id": 2,
+      "title": "2. Affordable Pricing: ",
+      "description": "Enjoy the freedom of the open road without breaking the bank. We offer competitive rates that cater to all budgets, along with special discounts and packages for long-term rentals. Our transparent pricing ensures you know exactly what you’re paying for, with no hidden costs."
+    },
+    {
+      "id": 3,
+      "title": "3. Well-Maintained & Reliable: ",
+      "description": "Safety and reliability are our top priorities. Each bike in our fleet undergoes regular maintenance checks and is kept in top condition to ensure you have a smooth and worry-free ride. Our commitment to quality means you can trust our bikes to perform at their best, every time."
+    },
+    {
+      "id": 4,
+      "title": "4. Easy & Convenient Booking: ",
+      "description": "Renting a bike has never been easier. Our intuitive online booking platform allows you to browse available bikes, choose your preferred model, and reserve it in just a few clicks. You can even manage your booking, extend your rental, or make changes directly from your account."
+    },
+    {
+      "id": 5,
+      "title": "5. Flexible Rental Options: ",
+      "description": "We understand that every rider’s needs are different. That’s why we offer flexible rental periods, from a few hours for a quick city ride to several days for an extended road trip. You can customize your rental duration to fit your schedule and make the most of your adventure."
+    },
+    {
+      "id": 6,
+      "title": "6. Comprehensive Insurance: ",
+      "description": "Ride with confidence knowing that we’ve got you covered. All our rentals include comprehensive insurance that protects you in case of unforeseen events. Whether it’s an accident, theft, or damage, our insurance policies are designed to give you peace of mind while you enjoy your journey."
+    },
+    {
+      "id": 7,
+      "title": "7. Expert Support: ",
+      "description": "Our team of biking enthusiasts is always here to help. Whether you need advice on the best bike for your trip, tips on local riding routes, or technical support during your rental period, our knowledgeable staff is dedicated to providing you with exceptional service and ensuring your experience is nothing short of perfect."
+    }
+  ]
+}

@@ -40,6 +40,7 @@ const LoadingUpButton: FC = () => {
               duration: 0.3,
             },
           }}
+          whileHover={{ scale: 1.1}}
           className="fixed bottom-8 right-4 bg-secondary text-white   rounded-full z-50 text-3xl p-1 cursor-pointer"
           onClick={handleScrollToTop}
         >

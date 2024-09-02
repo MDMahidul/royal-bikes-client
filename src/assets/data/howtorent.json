@@ -1,0 +1,39 @@
+{
+  "howToRentABike": [
+    {
+      "step": 1,
+      "title": "Create an Account or Log In",
+      "description": "Log in to your account or create a new one to proceed with your rental. This helps us keep track of your reservations and provide better service."
+    },
+    {
+      "step": 2,
+      "title": "Browse Our Selection",
+      "description": "Explore our wide range of available bikes. Use filters to find the perfect match for your needs, whether you're looking for a mountain bike, road bike, or something else."
+    },
+    {
+      "step": 3,
+      "title": "Choose Your Bike",
+      "description": "Select the bike you want to rent. Check the specifications, availability, and pricing details to ensure it suits your requirements."
+    },
+    {
+      "step": 4,
+      "title": "Advance Payment & Book The Bike",
+      "description": "Once you've selected your bike,before book it pay 100 tk in advance. Review your selection to ensure everything is correct."
+    },
+    {
+      "step": 5,
+      "title": "Pick Up Your Bike",
+      "description": "Visit our rental location to pick up your bike. Our team will ensure the bike is ready for you, and provide any necessary instructions. Time will be read when you pick up your bike"
+    },
+    {
+      "step": 6,"title": "Return the Bike",
+      "description": "Bring the bike back to our location at the end of your journey. Our staff will inspect the bike and complete the return process. And your time will be count by calculating pick up and retun time."
+      
+    },
+    {
+      "step": 7,
+      "title": "Complete the Checkout Process",
+      "description": "After returning the bike total cost will be shown for checking out. Enter your payment details, review the rental agreement, and complete your payment."
+    }
+  ]
+}

@@ -1,11 +1,21 @@
 import Banner from "./Banner";
-import OurServices from "./OurServices";
+import ContactUs from "./ContactUs";
+import HowToRent from "./HowToRent";
+import OurServices from "./ListedBikes";
+import Offer from "./Offer";
+import Testimonial from "./Testimonial";
+import WhyChooseUs from "./WhyChooseUs";
 
 const HomePage = () => {
     return (
       <>
         <Banner />
         <OurServices />
+        <Offer/>
+        <WhyChooseUs/>
+        <HowToRent/>
+        <Testimonial/>
+        <ContactUs/>
       </>
     );
 };
