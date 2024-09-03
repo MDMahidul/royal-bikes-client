@@ -1,5 +1,5 @@
 import bannerImage from "@/assets/banner3.jpg";
-import { HiMagnifyingGlass } from "react-icons/hi2";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 import bike from "@/assets/bikes/bike1.webp";
 import bike2 from "@/assets/bikes/bike2.webp";
 import bike3 from "@/assets/bikes/bike3.webp";
@@ -7,8 +7,57 @@ import SlideInFromLeft from "@/components/Animation/SlideFromLeft";
 import Container from "@/components/Container/Container";
 import SlideInFromRight from "@/components/Animation/SlideFromRight";
 import ZoomInEffect from "@/components/Animation/ZoomInEffect";
+import SearchResultModal from "@/components/Modal/SearchResultModal";
+import { TQueryParams } from "@/types/global";
+import { ChangeEvent, useState } from "react";
+import { useGetAvailableBikesQuery } from "@/redux/api/bikes/bikes.api";
+import { FiLoader } from "react-icons/fi";
+import { FieldValues, useForm } from "react-hook-form";
+import { toast } from "sonner";
+import SearchBar from "@/components/SearchBar/SearchBar";
 
 const Banner = () => {
+  const [params, setParams] = useState<TQueryParams[]>([]);
+  const [searchType, setSearchType] = useState<string>("name");
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [shouldFetch, setShouldFetch] = useState<boolean>(false);
+
+  const { register, handleSubmit, reset } = useForm();
+
+  const {
+    data: bikesData,
+    isLoading,
+    isError,
+  } = useGetAvailableBikesQuery([...params], { skip: !shouldFetch });
+  if (isLoading) {
+    toast(
+      <p className="flex items-center gap-3 font-semibold">
+        <span className="animate-spin">
+          <FiLoader />
+        </span>
+        Searching...
+      </p>,
+      { duration: 1000 }
+    );
+  }
+  if (isError) {
+    toast.error("Something went wrong!", { duration: 2000 });
+  }
+
+  const handleSearchTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSearchType(e.target.value);
+  };
+
+  const handleSearchByName = (data: FieldValues) => {
+    const searchTerm = data[searchType];
+    const updatedParams = [{ name: searchType, value: searchTerm }];
+
+    setParams(updatedParams.filter((param) => param.value));
+    setShouldFetch(true);
+    setIsModalOpen(true);
+    reset();
+  };
+
   return (
     <div
       className="relative lg:min-h-screen 2xl:min-h-[730px] bg-cover bg-center bg-fixed"
@@ -23,32 +72,9 @@ const Banner = () => {
             Your Adventure Starts Here
           </h1>
         </SlideInFromLeft>
-        <form className="sm:w-full max-w-xl mx-auto ">
-          <SlideInFromRight>
-            <div className="flex">
-              <select className="block p-2.5   text-sm text-gray-900 bg-gray-50 rounded-s-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-transparent focus:border-white dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">
-                <option value=""> Search By </option>
-                <option value="Diet"> Name </option>
-                <option value="Health-Care"> Model </option>
-              </select>
-              <div className="relative w-full">
-                <input
-                  type="search"
-                  id="search-dropdown"
-                  className="block p-2.5 w-full  z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-transparent focus:border-white dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-                  placeholder="Search Your Bike"
-                />
-                <button
-                  type="submit"
-                  className="absolute top-0 end-0 px-2.5 sm:px-5 py-2.5 text-sm font-medium h-full text-white bg-primary rounded-e-lg   hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-transparent dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  <HiMagnifyingGlass className="w-5 h-5" />
-                  <span className="sr-only">Search</span>
-                </button>
-              </div>
-            </div>
-          </SlideInFromRight>
-        </form>
+        <div className="sm:w-full max-w-xl mx-auto ">
+          <SearchBar />
+        </div>
         <Container>
           <div className="text-center space-y-5 mt-5">
             <SlideInFromRight>
@@ -74,6 +100,13 @@ const Banner = () => {
             </ZoomInEffect>
           </div>
         </Container>
+        {/*  {bikesData && (
+          <SearchResultModal
+            bikes={bikesData}
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
+        )} */}
       </div>
     </div>
   );

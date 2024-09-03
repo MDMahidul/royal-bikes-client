@@ -30,9 +30,9 @@ const HowToRent = () => {
           </ol>
         </div>
         <div className="sticky top-28 hidden md:block ">
-          <SlideInFromRight>
+          <SlideInFromLeft>
             <img className="max-w-lg h-[75vh] rounded-md" src={couple} alt="" />
-          </SlideInFromRight>
+          </SlideInFromLeft>
         </div>
       </div>
     </Container>

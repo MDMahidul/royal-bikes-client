@@ -33,7 +33,7 @@ const MenuOptions: React.FC<OptionProps> = ({ text, Icon, setOpen }) => {
     <motion.li
       variants={itemVariants}
       onClick={() => setOpen(false)}
-      className="flex items-center gap-2 w-full p-2 text-xs font-medium whitespace-nowrap rounded-md hover:bg-indigo-100 text-primary hover:text-indigo-500 transition-colors cursor-pointer"
+      className="flex items-center gap-2 w-full p-2 text-xs font-medium whitespace-nowrap rounded-md hover:bg-indigo-100 dark:hover:bg-gray-400 text-primary dark:text-white hover:text-indigo-500 transition-colors cursor-pointer"
     >
       <motion.span variants={actionIconVariants}>
         <Icon />

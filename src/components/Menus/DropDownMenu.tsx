@@ -51,7 +51,7 @@ const DropdownMenu = () => {
           initial={wrapperVariants.closed}
           variants={wrapperVariants}
           style={{ originY: "top", translateX: "-50%" }}
-          className="flex flex-col gap-2 p-2 rounded-lg bg-white  absolute top-[150%] left-[60%] w-36 overflow-hidden shadow-xl"
+          className="flex flex-col gap-2 p-2 rounded-lg bg-white dark:bg-gray-600 absolute top-[150%] left-[60%] w-36 overflow-hidden shadow-xl"
         >
           {!user && (
             <>

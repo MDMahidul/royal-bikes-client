@@ -2,7 +2,6 @@ import Container from "@/components/Container/Container";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import imageChoose from "@/assets/bikes/chooseBike.png";
 import choosingData from "@/assets/data/choosing.json";
-import SlideInFromRight from "@/components/Animation/SlideFromRight";
 import SlideInFromLeft from "@/components/Animation/SlideFromLeft";
 
 const WhyChooseUs = () => {
@@ -18,8 +17,8 @@ const WhyChooseUs = () => {
           </div>
           <div className="md:w-[55%]">
             {choosingData.choosingData.map((item) => (
-              <SlideInFromRight>
-                <div key={item.id} className="mb-5">
+              <SlideInFromLeft key={item.id}>
+                <div className="mb-5">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-primary dark:text-white">
                     {item.title}
                   </h3>
@@ -27,7 +26,7 @@ const WhyChooseUs = () => {
                     {item.description}
                   </p>
                 </div>
-              </SlideInFromRight>
+              </SlideInFromLeft>
             ))}
           </div>
         </div>
