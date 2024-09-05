@@ -13,6 +13,7 @@ import comuncation from "@/assets/data/com.json";
 import pin from "@/assets/data/pin.json";
 
 const AboutUs = () => {
+
   return (
     <div className="py-10 md:py-16 ">
       <ParallaxHeader heading="About Us" />
@@ -207,7 +208,7 @@ const AboutUs = () => {
               </h3>
             </SlideInFromLeft>
             <div>
-              <div className="flex flex-col md:flex-row gap-8 justify-evenly items-center">
+              <div className="flex flex-col md:flex-row gap-8 justify-evenly items-start">
                 <SlideInFromLeft>
                   <div className="flex flex-col justify-center items-center">
                     <Lottie
@@ -231,9 +232,8 @@ const AboutUs = () => {
                     />
                     <div className="text-gray-600 dark:text-white font-medium text-center">
                       <p>
-                        Road# 18, Block# D,
-                        <br /> House# 01, Ka-244,Progoti sarani,
-                        <br /> Baridhara, Dhaka, Bangladesh
+                        Marine Drive, Cox's Bazar,
+                        <br /> Chittagong, Bangladesh
                       </p>
                     </div>
                   </div>

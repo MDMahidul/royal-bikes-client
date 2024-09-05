@@ -11,8 +11,8 @@ type TModalProp = {
 };
 
 const SearchResultModal = ({ bikes, isOpen, onClose }: TModalProp) => {
-  console.log(bikes);
-  // Close the modal when the 'Escape' key is pressed
+  //console.log(bikes);
+  
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {

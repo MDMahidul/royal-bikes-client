@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import bikes from '@/assets/bikes/bike1.webp';
 import SlideInFromRight from "../Animation/SlideFromRight";
 import SlideInFromLeft from "../Animation/SlideFromLeft";
+import { MdLocationPin } from "react-icons/md";
+
 
 const Footer = () => {
   return (
@@ -48,11 +50,13 @@ const Footer = () => {
               </li>
               <li className="flex items-center sm:mt-4">
                 <div className="bg-white h-8 w-8 rounded-full flex items-center justify-center shrink-0">
-                  <FaEnvelope className="text-secondary h-[18px] w-[18px]" />
+                  <MdLocationPin className="text-secondary h-6 w-6" />
                 </div>
                 <a href="#" className="text-gray-100 text-sm ml-4">
                   <small className="block">Address</small>
-                  <strong>Khilkhet, Dhaka, Bangladesh</strong>
+                  <strong>
+                    Marine Drive, Cox's Bazar, Chittagong, Bangladesh
+                  </strong>
                 </a>
               </li>
             </ul>

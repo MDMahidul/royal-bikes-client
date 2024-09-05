@@ -1,16 +1,16 @@
 import { TBike } from "@/types/types";
-import { Calendar } from "lucide-react";
 import { FaMotorcycle } from "react-icons/fa";
 import { RxGear } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import { IoSpeedometerOutline } from "react-icons/io5";
 
 type TBikeProps = {
   bike: TBike;
 };
 const BikeCard = ({ bike }: TBikeProps) => {
-  const { name, brand, pricePerHour, cc,year,model } = bike;
+  const { _id,name, brand, pricePerHour, cc,model,mileage } = bike;
   return (
-    <Link to=''>
+    <Link to={`/bikes/${_id}`}>
       <div className="max-w-sm bg-white dark:bg-gray-500  shadow hover:shadow-lg rounded ">
         <div>
           <img
@@ -28,14 +28,14 @@ const BikeCard = ({ bike }: TBikeProps) => {
               {name}
             </h3>
           </div>
-          <div className="bg-primary text-white px-2 py-1 absolute right-0 top-14">
-            <span className="text-lg font-bold ">${pricePerHour}</span>
+          <div className="bg-primary text-white px-2 py-1 absolute right-0 top-[75px]">
+            <span className="text-xl  font-bold ">৳{pricePerHour}</span>
             <span className="text-sm font-medium ">/hour</span>
           </div>
           <div className="flex items-center  mt-2 font-semibold">
             <FaMotorcycle className="w-5 h-5 text-gray-500 dark:text-white" />
-            <span className="text-sm ml-1.5 text-gray-800text-gray-800">
-              {model}{" "}
+            <span className="text-sm ml-1.5 text-gray-500 capitalize">
+              {model}
             </span>
           </div>
           <div className="flex items-center text-gray-500 dark:text-white mt-0.5">
@@ -43,9 +43,9 @@ const BikeCard = ({ bike }: TBikeProps) => {
             <span className="text-sm ml-1.5 font-semibold">{cc} cc</span>
           </div>
           <div className="flex items-center text-gray-500 dark:text-white mt-0.5 ">
-            <Calendar className="w-[18px] h-[18px] text-gray-600 dark:text-white" />
+            <IoSpeedometerOutline className="w-[18px] h-[18px] text-gray-600 dark:text-white" />
             <span className="text-sm ml-1.5 mt-1 font-semibold">
-              {year} edition
+              {mileage} kmpl
             </span>
           </div>
         </div>

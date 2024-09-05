@@ -5,6 +5,7 @@ export type TUser = {
   userId: string;
   email: string;
   role: string;
+  isFirstRide:boolean;
   iat: number;
   exp: number;
 };

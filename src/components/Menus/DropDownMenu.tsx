@@ -87,15 +87,15 @@ const DropdownMenu = () => {
                 Icon={FaRegBell}
                 text="Notification"
               />
+              <button onClick={handleLogout}>
+                <MenuOptions
+                  setOpen={setOpen}
+                  Icon={FaSignOutAlt}
+                  text="Sign Out"
+                />
+              </button>
             </>
           )}
-          <button onClick={handleLogout}>
-            <MenuOptions
-              setOpen={setOpen}
-              Icon={FaSignOutAlt}
-              text="Sign Out"
-            />
-          </button>
         </motion.ul>
       </motion.div>
     </div>

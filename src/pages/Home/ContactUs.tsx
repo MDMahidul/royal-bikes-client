@@ -15,14 +15,14 @@ const ContactUs = () => {
         <div className="font-[sans-serif] max-w-6xl mx-auto relative bg-white dark:bg-gray-900 rounded-lg py-6">
           <div className="grid lg:grid-cols-3 items-center">
             <SlideInFromLeft>
-              <div className="grid sm:grid-cols-2 gap-4 z-20 relative lg:left-16 max-lg:px-4">
+              <div className="grid sm:grid-cols-2 gap-4 z-10 relative lg:left-16 max-lg:px-4">
                 <div className="contact-card">
                   <FiMapPin className="w-7 h-7 text-secondary dark:text-white" />
                   <h4 className="text-primary dark:text-white text-base font-bold mt-4">
                     Visit office
                   </h4>
                   <p className="text-sm text-gray-600 mt-2 dark:text-white">
-                    Khilkhet, Dhaka, Bangladesh
+                    Cox's Bazar, Chittagong, Bangladesh
                   </p>
                 </div>
                 <div className="contact-card">
@@ -57,7 +57,7 @@ const ContactUs = () => {
                 </div>
               </div>
             </SlideInFromLeft>
-            <div className="lg:col-span-2 bg-secondary dark:bg-gray-700 rounded-lg sm:p-10 p-4 z-10 max-lg:-order-1 max-lg:mb-8">
+            <div className="lg:col-span-2 bg-secondary dark:bg-gray-700 rounded-lg sm:p-10 p-4  max-lg:-order-1 max-lg:mb-8">
               <SlideInFromRight>
                 <h2 className="text-3xl text-white text-center font-bold mb-6">
                   Contact us

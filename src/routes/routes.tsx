@@ -10,6 +10,9 @@ import SignUp from "@/pages/Login&SignUp/SignUp";
 import PrivacyPolicies from "@/pages/Terms&Policy/PrivacyPolicies";
 import TermsConditions from "@/pages/Terms&Policy/TermsConditions";
 import { createBrowserRouter } from "react-router-dom";
+import ProtectedRoute from "./ProtectedRoute";
+import BikeDetails from "@/pages/BikeDetails/BikeDetails";
+import BookingConfirm from "@/pages/BookingConfirm/BookingConfirm";
 
 const router = createBrowserRouter([
   {
@@ -18,9 +21,18 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "/bikes", element: <Bikes /> },
+      { path: "/bikes/:bikeId", element: <BikeDetails /> },
       { path: "/about-us", element: <AboutUs /> },
       { path: "/terms-of-services", element: <TermsConditions /> },
       { path: "/privacy-policies", element: <PrivacyPolicies /> },
+      {
+        path: "/booking-confirmatin/:bikeId",
+        element: (
+          <ProtectedRoute roles={["user"]}>
+            <BookingConfirm />
+          </ProtectedRoute>
+        ),
+      },
     ],
   },
   {
@@ -33,7 +45,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout />,
+    element: (
+      <ProtectedRoute roles={["admin", "user"]}>
+        <DashboardLayout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         index: true,
