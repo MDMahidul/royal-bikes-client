@@ -13,6 +13,8 @@ import { createBrowserRouter } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 import BikeDetails from "@/pages/BikeDetails/BikeDetails";
 import BookingConfirm from "@/pages/BookingConfirm/BookingConfirm";
+import Unauthorized from "@/components/Error/Unauthorized";
+import BikeMangement from "@/pages/Dashboard/BikeManagement/BikeMangement";
 
 const router = createBrowserRouter([
   {
@@ -44,9 +46,13 @@ const router = createBrowserRouter([
     element: <SignUp />,
   },
   {
+    path: "/unauthorized",
+    element: <Unauthorized />,
+  },
+  {
     path: "/dashboard",
     element: (
-      <ProtectedRoute roles={["admin", "user"]}>
+      <ProtectedRoute roles={["superAdmin","admin", "user"]}>
         <DashboardLayout />
       </ProtectedRoute>
     ),
@@ -58,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: "bikeslist",
         element: <BikesList />,
+      },
+      {
+        path: "manage-bikes",
+        element: <BikeMangement />,
       },
     ],
   },

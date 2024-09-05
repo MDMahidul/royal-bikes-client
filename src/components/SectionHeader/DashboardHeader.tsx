@@ -7,7 +7,7 @@ const DashboardHeader = ({ title }: TDashboardProp) => {
   return (
     <div>
       <SlideInFromLeft>
-        <h3 className="text-lg md:text-2xl font-medium text-primary dark:text-white border-b-2 border-secondary dark:border-white pb-2">
+        <h3 className="text-lg md:text-xl font-semibold text-primary dark:text-white border-b-2 border-secondary dark:border-white pb-2">
           {title}
         </h3>
       </SlideInFromLeft>

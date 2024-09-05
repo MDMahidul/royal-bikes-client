@@ -10,7 +10,7 @@ const UserMenu = () => {
           className={({ isActive }) =>
             `sidebar ${isActive ? "sidebar-active" : "text-white"}`
           }
-        >
+        > 
           <FaUser className="w-5 h-5" />
           <span className="mx-4 font-medium">Profile</span>
         </NavLink>

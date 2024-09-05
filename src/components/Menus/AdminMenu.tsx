@@ -1,4 +1,4 @@
-import { FaUsers, FaList } from "react-icons/fa";
+import { FaUser, FaUsers, FaList, FaMotorcycle } from "react-icons/fa";
 import { HiMiniRectangleStack } from "react-icons/hi2";
 import { MdShoppingCart, MdDashboard } from "react-icons/md";
 import { NavLink } from "react-router-dom";
@@ -15,17 +15,17 @@ const AdminMenu = () => {
             `sidebar ${isActive ? "sidebar-active" : "text-white"}`
           }
         >
-          <MdDashboard className="w-5 h-5" />
-          <span className="mx-4 font-medium">Dashboard</span>
+          <FaUser className="w-5 h-5" />
+          <span className="mx-4 font-medium">Profile</span>
         </NavLink>
         <NavLink
-          to="manage-products"
+          to="manage-bikes"
           className={({ isActive }) =>
             `sidebar ${isActive ? "sidebar-active" : "text-white"}`
           }
         >
-          <FaList className="w-5 h-5" />
-          <span className="mx-4 font-medium">Manage Products</span>
+          <FaMotorcycle className="w-5 h-5" />
+          <span className="mx-4 font-medium">Manage Bikes</span>
         </NavLink>
         <NavLink
           to="manage-orders"

@@ -3,6 +3,8 @@ import SlideInFromRight from "@/components/Animation/SlideFromRight";
 import Container from "@/components/Container/Container";
 import LoadingError from "@/components/Error/LoadingError";
 import Loader from "@/components/Loader/Loader";
+import ProfileUpdateModal from "@/components/Modal/ProfleUpdateModal";
+import DashboardHeader from "@/components/SectionHeader/DashboardHeader";
 import useUserProfile from "@/hooks/useUserProfile";
 import { Helmet } from "react-helmet-async";
 
@@ -15,13 +17,14 @@ const Profile = () => {
     <LoadingError />;
   }
   const { id, name, pImage, email, contactNo, address } = userProfile.data;
-
+ 
   return (
     <div className="my-5 mb-20 sm:mb-40 ">
       <Helmet>
         <title>Profile</title>
       </Helmet>
       <Container>
+        <DashboardHeader title="User Profile" />
         <SlideInFromLeft>
           <div className="my-5">
             <p className="text-lg sm:text-2xl font-semibold  text-primary dark:text-white">
@@ -30,14 +33,14 @@ const Profile = () => {
             </p>
           </div>
         </SlideInFromLeft>
-        <SlideInFromRight>
+        {/* <SlideInFromRight>
           <div className="border-b dark:border-white mb-8">
             <p className="text-center text-primary dark:text-white font-semibold py-5 text-2xl sm:text-3xl">
               User Profile
             </p>
           </div>
-        </SlideInFromRight>
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+        </SlideInFromRight> */}
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 my-10">
           <SlideInFromLeft>
             <div>
               <img
@@ -70,7 +73,7 @@ const Profile = () => {
                         scope="row"
                         className="px-6 py-2.5 font-medium text-gray-900 dark:text-gray-300 whitespace-nowrap"
                       >
-                        Name
+                        Name :
                       </th>
                       <td className="px-6 py-2.5">{name}</td>
                     </tr>
@@ -79,7 +82,7 @@ const Profile = () => {
                         scope="row"
                         className="px-6 py-2.5 font-medium text-gray-900 dark:text-gray-300 whitespace-nowrap"
                       >
-                        Email:
+                        Email :
                       </th>
                       <td className="px-6 py-2.5">{email}</td>
                     </tr>
@@ -88,7 +91,7 @@ const Profile = () => {
                         scope="row"
                         className="px-6 py-2.5 font-medium text-gray-900 dark:text-gray-300 whitespace-nowrap"
                       >
-                        Contact:
+                        Contact :
                       </th>
                       <td className="px-6 py-2.5">{contactNo}</td>
                     </tr>
@@ -97,15 +100,13 @@ const Profile = () => {
                         scope="row"
                         className="px-6 py-2.5 font-medium text-gray-900 dark:text-gray-300 whitespace-nowrap"
                       >
-                        Address:
+                        Address :
                       </th>
                       <td className="px-6 py-2.5">{address}</td>
                     </tr>
                     <tr>
                       <td colSpan={2}>
-                        <button className="primary-button w-full mt-5">
-                          Update
-                        </button>
+                        <ProfileUpdateModal user={userProfile}/>
                       </td>
                     </tr>
                   </tbody>

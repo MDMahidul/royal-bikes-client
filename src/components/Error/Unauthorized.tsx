@@ -14,7 +14,7 @@ const Unauthorized = () => {
       <div className=" py-10 bg-[#F0F0F0] min-h-screen flex flex-col justify-center items-center gap-10">
         <div className="flex flex-col justify-center items-center gap-5">
           <p className="text-7xl md:text-9xl font-bold text-tertiary">
-            <GiStopSign />
+            <GiStopSign className="text-primary"/>
           </p>
           <p className="text-lg md:text-4xl font-semibold text-gray-600">
             Hold Up !!!

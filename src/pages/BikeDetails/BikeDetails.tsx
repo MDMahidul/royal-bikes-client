@@ -18,7 +18,6 @@ import FadeInUpAnimation from "@/components/Animation/FadeInUpAnimtaion";
 const BikeDetails = () => {
   const { bikeId } = useParams();
   const { data: bikeData, isError, isLoading } = useGetSingleBikeQuery(bikeId);
- 
 
   if (isLoading) {
     return <Loader height="h-[80vh]" />;

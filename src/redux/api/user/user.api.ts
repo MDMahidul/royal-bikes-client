@@ -14,14 +14,17 @@ const userApi = baseApi.injectEndpoints({
       providesTags: ["user"],
     }),
     updateUserProfile: builder.mutation({
-      query: ({ data, token }) => ({
-        method: "PUT",
-        url: `/user/me`,
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: { user: data },
-      }),
+      query: ({ user, token }) => {
+console.log(user);
+        return {
+          method: "PUT",
+          url: `/user/me`,
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: { user },
+        };
+      },
       invalidatesTags: ["user"],
     }),
   }),
