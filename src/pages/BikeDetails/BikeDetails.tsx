@@ -4,7 +4,7 @@ import Container from "@/components/Container/Container";
 import LoadingError from "@/components/Error/LoadingError";
 import Loader from "@/components/Loader/Loader";
 import { useGetSingleBikeQuery } from "@/redux/api/bikes/bikes.api";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Calendar } from "lucide-react";
 import { FaMotorcycle } from "react-icons/fa";
 import { RxGear } from "react-icons/rx";
@@ -47,7 +47,7 @@ const BikeDetails = () => {
     pricePerHour,
     isAvailable,
     mileage,
-    description,
+    description,image
   } = bikeData.data;
 
  
@@ -56,20 +56,22 @@ const BikeDetails = () => {
       <Container>
         <SlideInFromLeft>
           <BreadCrumb items={breadCrumbItems} />
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+          <div className="w-full flex flex-col md:flex-row  gap-4 md:gap-8">
             <div className="">
               <img
-                src="https://d56b293rhv8dp.cloudfront.net/vehicle_photos/12136/attachments/size550/IMG_0173_%281%29.jpg?1696374924"
+                src={image}
                 alt="BMW R 1250 GS"
-                className="xl:max-w-xl rounded-md object-cover mx-auto shadow-lg p-4"
+                className="md:max-w-lg xl:max-w-2xl rounded-md object-cover mx-auto shadow-lg p-4"
               />
             </div>
 
             <div className="">
               <div>
-                <span className="capitalize fonr-sm text-secondary font-semibold">
-                  {brand}
-                </span>
+                <Link to={`/bikes?brand=${bikeData.data.brand}`}>
+                  <span className="capitalize fonr-sm text-secondary font-semibold">
+                    {brand}
+                  </span>
+                </Link>
                 <p className="capitalize text-2xl md:text-3xl text-primary dark:text-white font-bold -mt-1">
                   {name}
                 </p>
@@ -145,7 +147,7 @@ const BikeDetails = () => {
                   </tr>
                 </tbody>
               </table>
-              <ConfirmationModal bikeId={_id}/>
+              <ConfirmationModal bikeId={_id} />
             </div>
           </div>
           <div className="my-10">

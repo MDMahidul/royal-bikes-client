@@ -4,6 +4,17 @@ import { TQueryParams } from "@/types/global";
 
 const bikesApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
+    addBike: builder.mutation({
+      query: ({ bikeData, token }) => ({
+        url: "/bikes",
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: bikeData,
+      }),
+      invalidatesTags: ["bikes"],
+    }),
     getAllBikes: builder.query({
       query: (args) => {
         const params = new URLSearchParams();
@@ -38,8 +49,36 @@ const bikesApi = baseApi.injectEndpoints({
         url: `/bikes/${bikeId}`,
         method: "GET",
       }),
+      providesTags: ["bikes"],
+    }),
+    updateBike: builder.mutation({
+      query: ({ id, updateInfo, token }) => ({
+        url: `/bikes/${id}`,
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: updateInfo,
+      }),
+      invalidatesTags: ["bikes"],
+    }),
+    deleteBike: builder.mutation({
+      query: ({ id, token }) => ({
+        url: `/bikes/${id}`,
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }),
+      invalidatesTags: ["bikes"],
     }),
   }),
 });
 
-export const { useGetAllBikesQuery, useGetAvailableBikesQuery,useGetSingleBikeQuery } = bikesApi;
+export const {
+  useAddBikeMutation,
+  useGetAllBikesQuery,
+  useGetAvailableBikesQuery,
+  useGetSingleBikeQuery,useUpdateBikeMutation,
+  useDeleteBikeMutation,
+} = bikesApi;

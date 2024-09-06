@@ -54,7 +54,7 @@ const Bikes = () => {
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
   };
-  console.log({ brand });
+  
   return (
     <div className="py-10 md:py-16">
       <Helmet>

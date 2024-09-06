@@ -95,11 +95,11 @@
   }
 
   .banner-input-field{
-    @apply block p-2.5 w-full  z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-transparent focus:border-white dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500
+    @apply block p-2.5 w-full  z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-transparent focus:border-gray-300 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-secondary
   }
 
   .banner-select-field{
-    @apply block p-2.5 text-sm text-gray-600 bg-gray-50 rounded-s-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-transparent focus:border-white dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500 font-semibold
+    @apply block ps-2 sm:pe-0 p-2.5 w-28 sm:w-auto text-sm text-gray-600 bg-gray-50 rounded-s-lg   border border-gray-300 focus:ring-transparent focus:border-gray-300 dark:bg-gray-700 dark:border-s-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-secondary font-semibold
   }
 
   .banner-btn{

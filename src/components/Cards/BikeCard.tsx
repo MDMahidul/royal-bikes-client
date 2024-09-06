@@ -8,14 +8,15 @@ type TBikeProps = {
   bike: TBike;
 };
 const BikeCard = ({ bike }: TBikeProps) => {
-  const { _id,name, brand, pricePerHour, cc,model,mileage } = bike;
+  const { _id,name, brand, pricePerHour, cc,model,mileage,image } = bike;
+  console.log(bike);
   return (
     <Link to={`/bikes/${_id}`}>
-      <div className="max-w-sm bg-white dark:bg-gray-500  shadow hover:shadow-lg rounded ">
+      <div className="max-w-sm bg-white dark:bg-gray-500  shadow hover:shadow-lg rounded transform transition-all ease-in duration-100 hover:scale-[1.01]">
         <div>
           <img
             className="rounded-t w-full"
-            src="https://d56b293rhv8dp.cloudfront.net/vehicle_photos/12136/attachments/size550/IMG_0173_%281%29.jpg?1696374924"
+            src={image}
             alt="BMW R 1250 GS"
           />
         </div>
@@ -34,7 +35,7 @@ const BikeCard = ({ bike }: TBikeProps) => {
           </div>
           <div className="flex items-center  mt-2 font-semibold">
             <FaMotorcycle className="w-5 h-5 text-gray-500 dark:text-white" />
-            <span className="text-sm ml-1.5 text-gray-500 capitalize">
+            <span className="text-sm ml-1.5 text-gray-500 dark:text-white capitalize">
               {model}
             </span>
           </div>

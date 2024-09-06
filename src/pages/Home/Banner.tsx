@@ -48,7 +48,7 @@ const Banner = () => {
     setSearchType(e.target.value);
   };
 
-  const handleSearchByName = (data: FieldValues) => {
+  const handleSearch = (data: FieldValues) => {
     const searchTerm = data[searchType];
     const updatedParams = [{ name: searchType, value: searchTerm }];
 

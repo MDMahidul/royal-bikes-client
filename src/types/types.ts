@@ -1,5 +1,5 @@
 export type TBike = {
-    _id?:string;
+  _id?: string;
   name: string;
   description: string;
   pricePerHour: number;
@@ -10,4 +10,5 @@ export type TBike = {
   brand: string;
   isDeleted: boolean;
   image?: string;
+  mileage:string;
 };

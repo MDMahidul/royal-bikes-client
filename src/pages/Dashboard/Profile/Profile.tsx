@@ -19,7 +19,7 @@ const Profile = () => {
   const { id, name, pImage, email, contactNo, address } = userProfile.data;
  
   return (
-    <div className="my-5 mb-20 sm:mb-40 ">
+    <div className="md:my-5 mb-20 sm:mb-40 ">
       <Helmet>
         <title>Profile</title>
       </Helmet>

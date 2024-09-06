@@ -39,8 +39,8 @@ const SignUp = () => {
       });
       navigate("/login");
     } catch (error: any) {
-      console.log(error.data.errorMessages[0].message);
-      toast.error(error.data?.errorMessages[0]?.message, {
+      console.log(error.data.errorSources[0].message);
+      toast.error(error.data?.errorSources[0]?.message, {
         duration: 2000,
         style: { padding: "10px" },
       });

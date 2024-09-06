@@ -42,10 +42,10 @@ const SearchBar = () => {
     setSearchType(e.target.value);
   };
 
-  const handleSearchByName = (data: FieldValues) => {
+  const handleSearch = (data: FieldValues) => {
     /* for some reason querybuilder not working for handling case sensetiveity so capitalize the  */
     const capitalizedTerm = data[searchType].toLowerCase();
-    
+
     const updatedParams = [{ name: searchType, value: capitalizedTerm }];
 
     setParams(updatedParams.filter((param) => param.value));
@@ -57,7 +57,7 @@ const SearchBar = () => {
   return (
     <div>
       <SlideInFromRight>
-        <form onSubmit={handleSubmit(handleSearchByName)} className="flex">
+        <form onSubmit={handleSubmit(handleSearch)} className="flex">
           <select
             className="banner-select-field"
             onChange={handleSearchTypeChange}
