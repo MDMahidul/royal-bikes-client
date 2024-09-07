@@ -103,9 +103,9 @@ const AddBikeModal = () => {
                   <option value="yamaha">Yamaha</option>
                   <option value="honda">Honda</option>
                   <option value="kawasaki">Kawasaki</option>
-                  <option value="suzuki">Suzuki</option>  
+                  <option value="suzuki">Suzuki</option> 
                   <option value="bmw">BMW</option>
-                  <option value="ducati">Ducati</option>  
+                  <option value="ducati">Ducati</option> 
                   <option value="triumph">Triumph</option>
                   <option value="hero">Hero</option>
                   <option value="ktm">KTM</option>

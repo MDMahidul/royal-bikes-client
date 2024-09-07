@@ -16,6 +16,7 @@ import BookingConfirm from "@/pages/BookingConfirm/BookingConfirm";
 import Unauthorized from "@/components/Error/Unauthorized";
 import BikeMangement from "@/pages/Dashboard/Admin/BikeManagement/BikeMangement";
 import UserManagement from "@/pages/Dashboard/Admin/UserManagement/UserManagement";
+import CouponManagement from "@/pages/Dashboard/Admin/CouponManagement/CouponManagement";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
       {
         path: "manage-users",
         element: <UserManagement />,
+      },
+      {
+        path: "manage-coupons",
+        element: <CouponManagement />,
       },
     ],
   },

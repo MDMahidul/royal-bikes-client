@@ -1,8 +1,7 @@
-import { FaUser, FaUsers, FaList, FaMotorcycle } from "react-icons/fa";
-import { HiMiniRectangleStack } from "react-icons/hi2";
-import { MdShoppingCart, MdDashboard } from "react-icons/md";
+import { FaUser, FaUsers, FaMotorcycle } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { RiAdminFill } from "react-icons/ri";
+import {  RiCoupon3Fill } from "react-icons/ri";
+
 
 const AdminMenu = () => {
  
@@ -35,6 +34,15 @@ const AdminMenu = () => {
         >
           <FaUsers className="w-5 h-5" />
           <span className="mx-4 font-medium">Manage Users</span>
+        </NavLink>
+        <NavLink
+          to="manage-coupons"
+          className={({ isActive }) =>
+            `sidebar ${isActive ? "sidebar-active" : "text-white"}`
+          }
+        >
+          <RiCoupon3Fill className="w-5 h-5" />
+          <span className="mx-4 font-medium">Manage Coupons</span>
         </NavLink>
       </div>
     );

@@ -100,7 +100,9 @@ const BikeMangement = () => {
     setParams([]);
     setValue(searchType, "");
   };
- const totalPage = bikesData.meta.totalPage;
+
+  const totalPage = bikesData.meta.totalPage;
+
   return (
     <div className="md:my-5 mb-20 sm:mb-40 ">
       <Container>

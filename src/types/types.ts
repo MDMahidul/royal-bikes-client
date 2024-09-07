@@ -12,3 +12,14 @@ export type TBike = {
   image?: string;
   mileage:string;
 };
+
+export type TDiscount = "percentage" | "fixed";
+
+export type TCoupon = {
+  _id?:string;
+  code: string;
+  discountType: TDiscount;
+  discountValue: number;
+  endDate: Date;
+  isActive: boolean;
+};
