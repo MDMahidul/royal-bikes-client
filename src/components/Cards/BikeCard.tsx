@@ -25,7 +25,7 @@ const BikeCard = ({ bike }: TBikeProps) => {
             <h5 className="capitalize text-sm font-medium text-gray-500 dark:text-white -mb-1">
               {brand}
             </h5>
-            <h3 className="capitalize text-xl sm:text-lg md:text-xl font-bold text-gray-900">
+            <h3 className="capitalize text-xl sm:text-lg font-bold text-gray-900">
               {name}
             </h3>
           </div>

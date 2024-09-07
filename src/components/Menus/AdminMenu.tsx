@@ -28,40 +28,13 @@ const AdminMenu = () => {
           <span className="mx-4 font-medium">Manage Bikes</span>
         </NavLink>
         <NavLink
-          to="manage-orders"
-          className={({ isActive }) =>
-            `sidebar ${isActive ? "sidebar-active" : "text-white"}`
-          }
-        >
-          <MdShoppingCart className="w-5 h-5" />
-          <span className="mx-4 font-medium"> Orders</span>
-        </NavLink>
-        <NavLink
-          to="manage-blogs"
-          className={({ isActive }) =>
-            `sidebar ${isActive ? "sidebar-active" : "text-white"}`
-          }
-        >
-          <HiMiniRectangleStack className="w-5 h-5" />
-          <span className="mx-4 font-medium"> Blogs</span>
-        </NavLink>
-        <NavLink
-          to="listuser"
-          className={({ isActive }) =>
-            `sidebar ${isActive ? "sidebar-active" : "text-white"}`
-          }
-        >
-          <RiAdminFill className="w-5 h-5" />
-          <span className="mx-4 font-medium">Admin Panel</span>
-        </NavLink>
-        <NavLink
-          to="listuser"
+          to="manage-users"
           className={({ isActive }) =>
             `sidebar ${isActive ? "sidebar-active" : "text-white"}`
           }
         >
           <FaUsers className="w-5 h-5" />
-          <span className="mx-4 font-medium">All Users List</span>
+          <span className="mx-4 font-medium">Manage Users</span>
         </NavLink>
       </div>
     );

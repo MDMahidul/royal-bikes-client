@@ -73,7 +73,7 @@ const SidebarMenu = () => {
         </div>
         <div className="flex-grow">
           <nav>
-            {user?.role === "superAdmin" || user?.role === "admin " ? (
+            {user?.role === "superAdmin" || user?.role === "admin" ? (
               <AdminMenu />
             ) : (
               <UserMenu />

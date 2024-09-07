@@ -13,14 +13,6 @@ import { ChangeEvent, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
-import {
   Table,
   TableBody,
   TableCell,
@@ -38,6 +30,7 @@ import { useCurrentToken } from "@/redux/features/auth/authSlice";
 import UpdateBikeModal from "@/components/Modal/UpdateBikeModal";
 import NoData from "@/components/Error/NoData";
 import { FaTimes } from "react-icons/fa";
+import PaginationComponent from "@/components/Pagination/PaginationComponent";
 
 const BikeMangement = () => {
   const [params, setParams] = useState<TQueryParams[]>([]);
@@ -51,7 +44,9 @@ const BikeMangement = () => {
     data: bikesData,
     isLoading,
     isError,
-  } = useGetAllBikesQuery([{ name: "page", value: page }, ...params]);
+  } = useGetAllBikesQuery([{ name: "page", value: page }, ...params], {
+    pollingInterval: 30000,
+  });
   const [deleteBike] = useDeleteBikeMutation();
 
   if (isLoading) {
@@ -105,7 +100,7 @@ const BikeMangement = () => {
     setParams([]);
     setValue(searchType, "");
   };
-
+ const totalPage = bikesData.meta.totalPage;
   return (
     <div className="md:my-5 mb-20 sm:mb-40 ">
       <Container>
@@ -235,44 +230,11 @@ const BikeMangement = () => {
         )}
         <SlideInFromLeft>
           <div className="mt-8">
-            <Pagination>
-              <PaginationContent>
-                <PaginationItem>
-                  <PaginationPrevious
-                    href="#"
-                    onClick={() => handlePageChange(page - 1)}
-                    className={
-                      page === 1 ? "pointer-events-none opacity-50" : ""
-                    }
-                  />
-                </PaginationItem>
-                {Array.from(
-                  { length: bikesData.meta.totalPage },
-                  (_, index) => (
-                    <PaginationItem key={index}>
-                      <PaginationLink
-                        href="#"
-                        onClick={() => handlePageChange(index + 1)}
-                        isActive={page === index + 1}
-                      >
-                        {index + 1}
-                      </PaginationLink>
-                    </PaginationItem>
-                  )
-                )}
-                <PaginationItem>
-                  <PaginationNext
-                    href="#"
-                    onClick={() => handlePageChange(page + 1)}
-                    className={
-                      page === bikesData.meta.totalPage
-                        ? "pointer-events-none opacity-50"
-                        : ""
-                    }
-                  />
-                </PaginationItem>
-              </PaginationContent>
-            </Pagination>
+            <PaginationComponent
+              page={page}
+              handlePageChange={handlePageChange}
+              totalPage={totalPage}
+            />
           </div>
         </SlideInFromLeft>
       </Container>

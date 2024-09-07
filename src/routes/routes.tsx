@@ -14,7 +14,8 @@ import ProtectedRoute from "./ProtectedRoute";
 import BikeDetails from "@/pages/BikeDetails/BikeDetails";
 import BookingConfirm from "@/pages/BookingConfirm/BookingConfirm";
 import Unauthorized from "@/components/Error/Unauthorized";
-import BikeMangement from "@/pages/Dashboard/BikeManagement/BikeMangement";
+import BikeMangement from "@/pages/Dashboard/Admin/BikeManagement/BikeMangement";
+import UserManagement from "@/pages/Dashboard/Admin/UserManagement/UserManagement";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "manage-bikes",
         element: <BikeMangement />,
+      },
+      {
+        path: "manage-users",
+        element: <UserManagement />,
       },
     ],
   },

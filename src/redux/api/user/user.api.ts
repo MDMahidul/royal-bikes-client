@@ -3,6 +3,17 @@ import { baseApi } from "@/redux/api/baseApi";
 
 const userApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
+
+    getAllUsers: builder.query({
+      query: (token) => ({
+        method: "GET",
+        url: `/user`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }),
+      providesTags: ["user"],
+    }),
     getUserProfie: builder.query({
       query: (token) => ({
         method: "GET",
@@ -15,7 +26,7 @@ const userApi = baseApi.injectEndpoints({
     }),
     updateUserProfile: builder.mutation({
       query: ({ user, token }) => {
-console.log(user);
+        console.log(user);
         return {
           method: "PUT",
           url: `/user/me`,
@@ -27,7 +38,32 @@ console.log(user);
       },
       invalidatesTags: ["user"],
     }),
+    updateUserRole: builder.mutation({
+      query: ({ id, token }) => {
+        return {
+          method: "PATCH",
+          url: `/user/${id}`,
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+      },
+      invalidatesTags: ["user"],
+    }),
+    deleteUser: builder.mutation({
+      query: ({ id, token }) => {
+        return {
+          method: "DELETE",
+          url: `/user/${id}`,
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+      },
+      invalidatesTags: ["user"],
+    }),
+    
   }),
 });
 
-export const { useGetUserProfieQuery, useUpdateUserProfileMutation } = userApi;
+export const { useGetAllUsersQuery,useGetUserProfieQuery, useUpdateUserProfileMutation,useUpdateUserRoleMutation,useDeleteUserMutation } = userApi;

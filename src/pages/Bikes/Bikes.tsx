@@ -8,17 +8,10 @@ import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import { useGetAvailableBikesQuery } from "@/redux/api/bikes/bikes.api";
 import { TBike } from "@/types/types";
 import { Helmet } from "react-helmet-async";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
 import { useState } from "react";
 import { TQueryParams } from "@/types/global";
 import { useLocation } from "react-router-dom";
+import PaginationComponent from "@/components/Pagination/PaginationComponent";
 
 const Bikes = () => {
   /* get the current url */
@@ -28,7 +21,7 @@ const Bikes = () => {
   /* get the brand value */
   const brand = searchParams.get("brand");
   const [page, setPage] = useState(1);
-  const [params, setParams] = useState<TQueryParams[]>([]);
+  const [params] = useState<TQueryParams[]>([]);
 
   /* if the brand exists in the search only then use the brand search query */
   const queryParameters: TQueryParams[] = [
@@ -41,7 +34,7 @@ const Bikes = () => {
     data: bikesData,
     isLoading,
     isError,
-  } = useGetAvailableBikesQuery(queryParameters);
+  } = useGetAvailableBikesQuery(queryParameters, { pollingInterval: 30000 });
 
   if (isLoading) {
     return <Loader height="h-[80vh]" />;
@@ -54,7 +47,7 @@ const Bikes = () => {
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
   };
-  
+  const totalPage = bikesData.meta.totalPage;
   return (
     <div className="py-10 md:py-16">
       <Helmet>
@@ -73,46 +66,12 @@ const Bikes = () => {
           ))}
         </div>
         <FadeInUpAnimation>
-          <div className="mt-10">
-            <Pagination>
-              <PaginationContent>
-                <PaginationItem>
-                  <PaginationPrevious
-                    href="#"
-                    onClick={() => handlePageChange(page - 1)}
-                    className={
-                      page === 1 ? "pointer-events-none opacity-50" : ""
-                    }
-                  />
-                </PaginationItem>
-                {Array.from(
-                  { length: bikesData.meta.totalPage },
-                  (_, index) => (
-                    <PaginationItem key={index}>
-                      <PaginationLink
-                        href="#"
-                        onClick={() => handlePageChange(index + 1)}
-                        isActive={page === index + 1}
-                      >
-                        {index + 1}
-                      </PaginationLink>
-                    </PaginationItem>
-                  )
-                )}
-                <PaginationItem>
-                  <PaginationNext
-                    href="#"
-                    onClick={() => handlePageChange(page + 1)}
-                    className={
-                      page === bikesData.meta.totalPage
-                        ? "pointer-events-none opacity-50"
-                        : ""
-                    }
-                  />
-                </PaginationItem>
-              </PaginationContent>
-            </Pagination>
-          </div>
+          <div className="mt-10"></div>
+          <PaginationComponent
+            page={page}
+            handlePageChange={handlePageChange}
+            totalPage={totalPage}
+          />
         </FadeInUpAnimation>
       </Container>
     </div>
