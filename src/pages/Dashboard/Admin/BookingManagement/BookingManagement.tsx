@@ -1,33 +1,33 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import FadeInUpAnimation from "@/components/Animation/FadeInUpAnimtaion";
-import SlideInFromLeft from "@/components/Animation/SlideFromLeft";
+import { useState, useEffect } from "react";
 import Container from "@/components/Container/Container";
 import LoadingError from "@/components/Error/LoadingError";
 import Loader from "@/components/Loader/Loader";
-import PaginationComponent from "@/components/Pagination/PaginationComponent";
 import DashboardHeader from "@/components/SectionHeader/DashboardHeader";
-import BookingTable from "@/components/Tables/BookingTable";
-import { useGetMyBookingsQuery } from "@/redux/api/booking/booking.api";
+import { useGetAllBookingsQuery } from "@/redux/api/booking/booking.api";
 import { useCurrentToken } from "@/redux/features/auth/authSlice";
 import { useAppSelector } from "@/redux/hooks";
 import { TQueryParams } from "@/types/global";
-import { useEffect, useState } from "react";
+import SlideInFromLeft from "@/components/Animation/SlideFromLeft";
+import BookingManagementTable from "@/components/Tables/BookingManagementTable";
+import PaginationComponent from "@/components/Pagination/PaginationComponent";
+import FadeInUpAnimation from "@/components/Animation/FadeInUpAnimtaion";
 
-const MyBookings = () => {
+const BookingManagement = () => {
   const token = useAppSelector(useCurrentToken);
   const [params] = useState<TQueryParams[]>([]);
   const [payStatus, setPayStatus] = useState("pending");
   const [page, setPage] = useState(1);
   const [activeTab, setActiveTab] = useState("unpaid");
 
-  /* handle active tab */
-  useEffect(()=>{
+  // Update payStatus when activeTab changes
+  useEffect(() => {
     if (activeTab === "unpaid") {
       setPayStatus("pending");
     } else if (activeTab === "paid") {
       setPayStatus("paid");
     }
-  },[activeTab])
+  }, [activeTab]);
+
   const updatedParams = [
     { name: "paymentStatus", value: payStatus },
     { name: "page", value: page },
@@ -37,7 +37,8 @@ const MyBookings = () => {
     data: bookingsData,
     isError,
     isLoading,
-  } = useGetMyBookingsQuery({ args: updatedParams, token });
+  } = useGetAllBookingsQuery({ args: updatedParams, token });
+
   if (isLoading) {
     return <Loader height="h-[80vh]" />;
   }
@@ -45,15 +46,16 @@ const MyBookings = () => {
     return <LoadingError />;
   }
 
-  /* handle pagination */
+  // Handle pagination
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
   };
   const totalPage = bookingsData.meta.totalPage;
+
   return (
-    <div className="md:my-5 mb-20 sm:mb-40 ">
+    <div className="md:my-5 mb-20 sm:mb-40">
       <Container>
-        <DashboardHeader title="My Bookings" />
+        <DashboardHeader title="Manage Bookings" />
         <div>
           <SlideInFromLeft>
             <ul className="grid grid-cols-2 mt-4 justify-center  p-1 w-full">
@@ -90,12 +92,12 @@ const MyBookings = () => {
           <div className="mt-8">
             {activeTab === "unpaid" && (
               <div id="unpaid">
-                <BookingTable bookingsData={bookingsData.data} />
+                <BookingManagementTable bookingsData={bookingsData.data} />
               </div>
             )}
             {activeTab === "paid" && (
               <div id="paid">
-                <BookingTable bookingsData={bookingsData.data} />
+                <BookingManagementTable bookingsData={bookingsData.data} />
               </div>
             )}
           </div>
@@ -114,4 +116,4 @@ const MyBookings = () => {
   );
 };
 
-export default MyBookings;
+export default BookingManagement;

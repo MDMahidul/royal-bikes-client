@@ -17,7 +17,7 @@ import Unauthorized from "@/components/Error/Unauthorized";
 import BikeMangement from "@/pages/Dashboard/Admin/BikeManagement/BikeMangement";
 import UserManagement from "@/pages/Dashboard/Admin/UserManagement/UserManagement";
 import CouponManagement from "@/pages/Dashboard/Admin/CouponManagement/CouponManagement";
-import RentalManagement from "@/pages/Dashboard/Admin/RentalManagement/RentalManagement";
+import BookingManagement from "@/pages/Dashboard/Admin/BookingManagement/BookingManagement";
 import MyBookings from "@/pages/Dashboard/User/MyBookings/MyBookings";
 
 const router = createBrowserRouter([
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: (
-      <ProtectedRoute roles={["superAdmin","admin", "user"]}>
+      <ProtectedRoute roles={["superAdmin", "admin", "user"]}>
         <DashboardLayout />
       </ProtectedRoute>
     ),
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
       },
       {
         path: "manage-rentals",
-        element: <RentalManagement />,
+        element: <BookingManagement />,
       },
       {
         path: "manage-coupons",

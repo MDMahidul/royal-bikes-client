@@ -42,7 +42,7 @@ const AdminMenu = () => {
           }
         >
           <FaClipboardList className="w-5 h-5" />
-          <span className="mx-4 font-medium">Manage Rentals</span>
+          <span className="mx-4 font-medium">Manage Bookings</span>
         </NavLink>
         <NavLink
           to="manage-coupons"

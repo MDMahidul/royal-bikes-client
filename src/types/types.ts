@@ -1,3 +1,5 @@
+import { TUser } from "@/redux/features/auth/authSlice";
+
 export type TBike = {
   _id?: string;
   name: string;
@@ -22,4 +24,17 @@ export type TCoupon = {
   discountValue: number;
   endDate: Date;
   isActive: boolean;
+};
+
+export type TBooking = {
+  userId?: TUser;
+  bikeId: TBike;
+  startTime: Date;
+  returnTime: Date;
+  totalCost: number;
+  isCouponUsed: boolean;
+  isAdvancePaid: boolean;
+  transactionId: string;
+  paymentStatus: string;
+  isReturned: boolean;
 };
