@@ -2,6 +2,7 @@ import FadeInUpAnimation from "@/components/Animation/FadeInUpAnimtaion";
 import SlideInFromLeft from "@/components/Animation/SlideFromLeft";
 import SlideInFromRight from "@/components/Animation/SlideFromRight";
 import Container from "@/components/Container/Container";
+import LoadingError from "@/components/Error/LoadingError";
 import NoData from "@/components/Error/NoData";
 import Loader from "@/components/Loader/Loader";
 import AddCouponModal from "@/components/Modal/AddCouponModal";
@@ -38,8 +39,9 @@ const CouponManagement = () => {
   if (isLoading) {
     return <Loader height="h-[80vh]" />;
   }
+
   if (isError) {
-    toast.error("Something Went Wrong!");
+    return <LoadingError/>
   }
 
   /* handle pagination */
@@ -82,10 +84,10 @@ const CouponManagement = () => {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {couponData.data.map((coupon: TCoupon, index: number) => (
+                    {couponData?.data.map((coupon: TCoupon, index: number) => (
                       <TableRow key={index}>
                         <TableCell className="font-medium">
-                          {(page - 1) * couponData.meta.limit + index + 1}
+                          {(page - 1) * couponData?.meta.limit + index + 1}
                         </TableCell>
                         <TableCell className="text-gray-900 whitespace-nowrap dark:text-white font-semibold">
                           {coupon.code}

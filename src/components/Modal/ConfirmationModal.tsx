@@ -31,7 +31,7 @@ const ConfirmationModal = ({ bikeId }: TConfirmModalProp) => {
   };
   return (
     <AlertDialog>
-      <AlertDialogTrigger className=" primary-button w-11/12  xl:w-2/3 mt-5 ms-5 md:ms-0">
+      <AlertDialogTrigger className=" primary-button-white w-11/12  xl:w-2/3 mt-5 ms-5 md:ms-0">
         <button>Book Now</button>
       </AlertDialogTrigger>
       <AlertDialogContent>

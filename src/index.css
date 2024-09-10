@@ -91,7 +91,7 @@
   }
 
   .primary-button-white {
-    @apply bg-white px-4 md:px-8 py-2 sm:py-2 md:py-3 text-secondary text-sm md:text-[15px] font-semibold rounded-md hover:bg-gray-100 transform transition-all duration-200 hover:shadow-xl disabled:bg-gray-500 disabled:hover:scale-100;
+    @apply bg-white px-4 md:px-8 py-2 sm:py-2 md:py-3 text-secondary text-sm md:text-[15px] font-semibold rounded-md hover:bg-secondary hover:text-white transform transition-all duration-200 shadow-lg hover:shadow-xl disabled:bg-gray-500 disabled:hover:scale-100 border border-secondary hover:border-white;
   }
 
   .banner-input-field{
@@ -128,4 +128,8 @@
   .sidebar-active {
     @apply bg-secondary  text-white  dark:hover:text-white rounded-lg;
   }
+
+  .active-tab {
+  @apply bg-primary text-white;
+}
 }

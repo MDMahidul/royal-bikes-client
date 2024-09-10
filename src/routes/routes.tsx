@@ -2,7 +2,7 @@ import App from "@/App";
 import DashboardLayout from "@/components/Layouts/DashboardLayout";
 import AboutUs from "@/pages/About Us/AboutUs";
 import Bikes from "@/pages/Bikes/Bikes";
-import BikesList from "@/pages/Dashboard/BikesList/BikesList";
+import BikesList from "@/pages/Dashboard/User/BikesList/BikesList";
 import Profile from "@/pages/Dashboard/Profile/Profile";
 import HomePage from "@/pages/Home/HomePage";
 import Login from "@/pages/Login&SignUp/Login";
@@ -17,6 +17,8 @@ import Unauthorized from "@/components/Error/Unauthorized";
 import BikeMangement from "@/pages/Dashboard/Admin/BikeManagement/BikeMangement";
 import UserManagement from "@/pages/Dashboard/Admin/UserManagement/UserManagement";
 import CouponManagement from "@/pages/Dashboard/Admin/CouponManagement/CouponManagement";
+import RentalManagement from "@/pages/Dashboard/Admin/RentalManagement/RentalManagement";
+import MyBookings from "@/pages/Dashboard/User/MyBookings/MyBookings";
 
 const router = createBrowserRouter([
   {
@@ -76,8 +78,16 @@ const router = createBrowserRouter([
         element: <UserManagement />,
       },
       {
+        path: "manage-rentals",
+        element: <RentalManagement />,
+      },
+      {
         path: "manage-coupons",
         element: <CouponManagement />,
+      },
+      {
+        path: "my-bookings",
+        element: <MyBookings />,
       },
     ],
   },

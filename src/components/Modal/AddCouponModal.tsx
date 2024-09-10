@@ -10,12 +10,13 @@ import {
 import { useState } from "react";
 import { ImSpinner9 } from "react-icons/im";
 import { useAddCouponMutation } from "@/redux/api/coupon/coupon.api";
-import useUserProfile from "@/hooks/useUserProfile";
 import { toast } from "sonner";
+import { useAppSelector } from "@/redux/hooks";
+import { useCurrentToken } from "@/redux/features/auth/authSlice";
 
 const AddCouponModal = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { token } = useUserProfile();
+  const token = useAppSelector(useCurrentToken);
   const {
     register,
     handleSubmit,

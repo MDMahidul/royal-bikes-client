@@ -13,15 +13,16 @@ import { TBike } from "@/types/types";
 import { useUpdateBikeMutation } from "@/redux/api/bikes/bikes.api";
 import { FaRegEdit } from "react-icons/fa";
 import { imageUp } from "@/utils/imageUpload";
-import useUserProfile from "@/hooks/useUserProfile";
 import { ImSpinner9 } from "react-icons/im";
+import { useAppSelector } from "@/redux/hooks";
+import { useCurrentToken } from "@/redux/features/auth/authSlice";
 
 type TUpdateModalProp = {
   bike: TBike;
 };
 
 const UpdateBikeModal = ({ bike }: TUpdateModalProp) => {
-  const { token } = useUserProfile();
+  const token = useAppSelector(useCurrentToken);
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const {

@@ -9,7 +9,7 @@ type TBikeProps = {
 };
 const BikeCard = ({ bike }: TBikeProps) => {
   const { _id,name, brand, pricePerHour, cc,model,mileage,image } = bike;
-  console.log(bike);
+  //console.log(bike);
   return (
     <Link to={`/bikes/${_id}`}>
       <div className="max-w-sm bg-white dark:bg-gray-500  shadow hover:shadow-lg rounded transform transition-all ease-in duration-100 hover:scale-[1.01]">

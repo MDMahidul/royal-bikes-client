@@ -1,4 +1,4 @@
-import { FaUser, FaUsers, FaMotorcycle } from "react-icons/fa";
+import { FaUser, FaUsers, FaMotorcycle, FaClipboardList } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import {  RiCoupon3Fill } from "react-icons/ri";
 
@@ -34,6 +34,15 @@ const AdminMenu = () => {
         >
           <FaUsers className="w-5 h-5" />
           <span className="mx-4 font-medium">Manage Users</span>
+        </NavLink>
+        <NavLink
+          to="manage-rentals"
+          className={({ isActive }) =>
+            `sidebar ${isActive ? "sidebar-active" : "text-white"}`
+          }
+        >
+          <FaClipboardList className="w-5 h-5" />
+          <span className="mx-4 font-medium">Manage Rentals</span>
         </NavLink>
         <NavLink
           to="manage-coupons"

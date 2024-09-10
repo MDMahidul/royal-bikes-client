@@ -11,12 +11,13 @@ import {
 import { FieldValues, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { useAddBikeMutation } from "@/redux/api/bikes/bikes.api";
-import useUserProfile from "@/hooks/useUserProfile";
 import { imageUp } from "@/utils/imageUpload";
 import { ImSpinner9 } from "react-icons/im";
+import { useAppSelector } from "@/redux/hooks";
+import { useCurrentToken } from "@/redux/features/auth/authSlice";
 
 const AddBikeModal = () => {
-  const { token } = useUserProfile();
+  const  token  = useAppSelector(useCurrentToken);
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const {

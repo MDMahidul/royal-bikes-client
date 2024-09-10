@@ -10,15 +10,15 @@ import {
 import { FieldValues, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { ImSpinner9 } from "react-icons/im";
-import useUserProfile from "@/hooks/useUserProfile";
 import { useUpdateUserProfileMutation } from "@/redux/api/user/user.api";
 import { imageUp } from "@/utils/imageUpload";
+import { useAppSelector } from "@/redux/hooks";
+import { useCurrentToken } from "@/redux/features/auth/authSlice";
 
 const ProfileUpdateModal = ({ user }: any) => {
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const {token} = useUserProfile();
-  const { name, email, address, contactNo, pImage } = user.data;
+  const token = useAppSelector(useCurrentToken);
   const { register, handleSubmit, reset } = useForm();
   const [updateUserProfile, { isLoading }] = useUpdateUserProfileMutation();
 
@@ -74,7 +74,7 @@ const ProfileUpdateModal = ({ user }: any) => {
                 type="text"
                 id="name"
                 className="add-input-field"
-                defaultValue={name}
+                defaultValue={user?.name}
                 placeholder="User name"
                 {...register("name")}
               />
@@ -87,7 +87,7 @@ const ProfileUpdateModal = ({ user }: any) => {
                 type="email"
                 id="email"
                 className="add-input-field"
-                defaultValue={email}
+                defaultValue={user?.email}
                 placeholder="Email"
                 {...register("email")}
               />
@@ -100,7 +100,7 @@ const ProfileUpdateModal = ({ user }: any) => {
                 type="text"
                 id="contactNo"
                 className="add-input-field"
-                defaultValue={contactNo}
+                defaultValue={user?.contactNo}
                 placeholder="contact No"
                 {...register("contactNo")}
               />
@@ -113,7 +113,7 @@ const ProfileUpdateModal = ({ user }: any) => {
                 type="text"
                 id="address"
                 className="add-input-field"
-                defaultValue={address}
+                defaultValue={user?.address}
                 placeholder="Address"
                 {...register("address")}
               />

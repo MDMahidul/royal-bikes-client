@@ -13,14 +13,15 @@ import { ImSpinner9 } from "react-icons/im";
 import { useUpdateCouponMutation } from "@/redux/api/coupon/coupon.api";
 import { toast } from "sonner";
 import { TCoupon } from "@/types/types";
-import useUserProfile from "@/hooks/useUserProfile";
+import { useAppSelector } from "@/redux/hooks";
+import { useCurrentToken } from "@/redux/features/auth/authSlice";
 
 type TUpdateModalProp = {
   coupon: TCoupon;
 };
 
 const UpdateCouponModal = ({ coupon }: TUpdateModalProp) => {
-  const { token } = useUserProfile();
+  const token = useAppSelector(useCurrentToken);
   const [isOpen, setIsOpen] = useState(false);
   const {
     register,

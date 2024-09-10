@@ -5,19 +5,25 @@ import LoadingError from "@/components/Error/LoadingError";
 import Loader from "@/components/Loader/Loader";
 import ProfileUpdateModal from "@/components/Modal/ProfleUpdateModal";
 import DashboardHeader from "@/components/SectionHeader/DashboardHeader";
-import useUserProfile from "@/hooks/useUserProfile";
+import { useGetUserProfieQuery } from "@/redux/api/user/user.api";
+import { useCurrentToken } from "@/redux/features/auth/authSlice";
+import { useAppSelector } from "@/redux/hooks";
 import { Helmet } from "react-helmet-async";
 
 const Profile = () => {
-  const { userProfile, isError, isLoading } = useUserProfile();
+    const token = useAppSelector(useCurrentToken);
+    const {
+      data: userData,
+      isError,
+      isLoading,
+    } = useGetUserProfieQuery({ token: token });
   if (isLoading) {
     return <Loader height="h-[80vh]" />;
   }
-  if (isError || !userProfile) {
+  if (isError) {
     <LoadingError />;
   }
-  const { id, name, pImage, email, contactNo, address } = userProfile.data;
- 
+
   return (
     <div className="md:my-5 mb-20 sm:mb-40 ">
       <Helmet>
@@ -28,8 +34,8 @@ const Profile = () => {
         <SlideInFromLeft>
           <div className="my-5">
             <p className="text-lg sm:text-2xl font-semibold  text-primary dark:text-white">
-              Hello <span className="text-secondary">{name}</span>, Welcome to
-              Royal Bikes.
+              Hello <span className="text-secondary">{userData?.data.name}</span>,
+              Welcome to Royal Bikes.
             </p>
           </div>
         </SlideInFromLeft>
@@ -46,9 +52,9 @@ const Profile = () => {
               <img
                 className="max-w-[300px]  shadow"
                 src={
-                  !pImage
+                  !userData?.data.pImage
                     ? "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
-                    : pImage
+                    : userData?.data.pImage
                 }
                 alt=""
               />
@@ -66,7 +72,7 @@ const Profile = () => {
                       >
                         User ID :
                       </th>
-                      <td className="px-6 py-2.5">{id}</td>
+                      <td className="px-6 py-2.5">{userData?.data.id}</td>
                     </tr>
                     <tr>
                       <th
@@ -75,7 +81,7 @@ const Profile = () => {
                       >
                         Name :
                       </th>
-                      <td className="px-6 py-2.5">{name}</td>
+                      <td className="px-6 py-2.5">{userData?.data.name}</td>
                     </tr>
                     <tr>
                       <th
@@ -84,7 +90,7 @@ const Profile = () => {
                       >
                         Email :
                       </th>
-                      <td className="px-6 py-2.5">{email}</td>
+                      <td className="px-6 py-2.5">{userData?.data.email}</td>
                     </tr>
                     <tr>
                       <th
@@ -93,7 +99,7 @@ const Profile = () => {
                       >
                         Contact :
                       </th>
-                      <td className="px-6 py-2.5">{contactNo}</td>
+                      <td className="px-6 py-2.5">{userData?.data.contactNo}</td>
                     </tr>
                     <tr>
                       <th
@@ -102,11 +108,11 @@ const Profile = () => {
                       >
                         Address :
                       </th>
-                      <td className="px-6 py-2.5">{address}</td>
+                      <td className="px-6 py-2.5">{userData?.data.address}</td>
                     </tr>
                     <tr>
                       <td colSpan={2}>
-                        <ProfileUpdateModal user={userProfile}/>
+                        <ProfileUpdateModal user={userData?.data} />
                       </td>
                     </tr>
                   </tbody>
