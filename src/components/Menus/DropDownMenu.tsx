@@ -22,7 +22,7 @@ const DropdownMenu = () => {
     dispatch(logOut());
   };
   return (
-    <div className="flex items-center justify-center ">
+    <div className="flex items-center justify-center z-50">
       <motion.div animate={open ? "open" : "closed"} className="relative">
         <button
           onClick={() => setOpen((pv) => !pv)}

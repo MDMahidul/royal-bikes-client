@@ -20,6 +20,8 @@ import MyBookings from "@/pages/Dashboard/User/MyBookings/MyBookings";
 import CheckoutPage from "@/pages/Payments/CheckoutPage";
 import BookingManagement from "@/pages/Dashboard/Admin/BookingManagement/BookingManagement";
 import CouponManagement from "@/pages/Dashboard/Admin/CouponManagement/CouponManagement";
+import ForgetPasswordPage from "@/pages/Login&SignUp/ForgetPasswordPage";
+import ResetPasswordPage from "@/pages/Login&SignUp/ResetPasswordPage";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +59,14 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUp />,
+  },
+  {
+    path: "/forget-password",
+    element: <ForgetPasswordPage />,
+  },
+  {
+    path: "/reset-password",
+    element: <ResetPasswordPage />,
   },
   {
     path: "/unauthorized",

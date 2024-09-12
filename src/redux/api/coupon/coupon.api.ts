@@ -32,6 +32,15 @@ const bikesApi = baseApi.injectEndpoints({
       },
       providesTags: ["coupon"],
     }),
+    getActiveCoupon: builder.query({
+      query: () => {
+        return {
+          url: `/coupons/active-coupon`,
+          method: "GET",
+        };
+      },
+      providesTags: ["coupon"],
+    }),
     updateCoupon: builder.mutation({
       query: ({ data, id, token }) => ({
         url: `/coupons/${id}`,
@@ -56,4 +65,4 @@ const bikesApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useAddCouponMutation, useGetAllCouponsQuery,useUpdateCouponMutation,useDeleteCouponMutation } = bikesApi;
+export const { useAddCouponMutation, useGetAllCouponsQuery,useUpdateCouponMutation,useDeleteCouponMutation,useGetActiveCouponQuery } = bikesApi;

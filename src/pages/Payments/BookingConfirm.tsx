@@ -65,7 +65,7 @@ const BookingConfirm = () => {
   };
 
   return (
-    <div className="py-10 md:py-16 ">
+    <div className="py-16 ">
       <SectionHeader heading="Confirm your booking" />
       <Container>
         <div className="flex flex-col md:flex-row  justify-center items-start gap-5 gap-y-10">

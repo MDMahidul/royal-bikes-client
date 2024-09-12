@@ -1,5 +1,6 @@
 import Banner from "./Banner";
 import ContactUs from "./ContactUs";
+import Coupon from "./Coupon";
 import HowToRent from "./HowToRent";
 import OurServices from "./ListedBikes";
 import Offer from "./Offer";
@@ -13,6 +14,7 @@ const HomePage = () => {
         <OurServices />
         <Offer/>
         <WhyChooseUs/>
+        <Coupon/>
         <HowToRent/>
         <Testimonial/>
         <ContactUs/>

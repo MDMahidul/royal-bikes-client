@@ -51,7 +51,7 @@ const NavbarItems = () => {
   return (
     <Navbar
       className={`${navbarBg} ${
-        navbarBg === "bg-transparent" ? "md:text-white text-primary" : "text-blue-900"
+        navbarBg === "md:bg-transparent" ? "md:text-white text-primary" : "text-blue-900"
       } border-gray-200 dark:bg-gray-700 fixed w-full z-20 top-0 start-0 transition-all ease-out duration-200 ${navbarHeight} -px-20 `}
     >
       <Navbar.Brand>

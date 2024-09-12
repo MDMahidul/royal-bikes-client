@@ -10,7 +10,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { useAppSelector } from "@/redux/hooks";
-import { useCurrentToken } from "@/redux/features/auth/authSlice";
+import { selectCurrentUser, useCurrentToken } from "@/redux/features/auth/authSlice";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 
@@ -19,6 +19,7 @@ type TConfirmModalProp={
 }
 
 const ConfirmationModal = ({ bikeId }: TConfirmModalProp) => {
+  const userData =useAppSelector(selectCurrentUser);
   const token = useAppSelector(useCurrentToken);
   const navigate = useNavigate();
   const handleConfirm = () => {
@@ -29,10 +30,13 @@ const ConfirmationModal = ({ bikeId }: TConfirmModalProp) => {
     }
     navigate(`/booking-confirmatin/${bikeId}`);
   };
+    const isAdminOrSuperAdmin =
+      userData?.role === "admin" || userData?.role === "superAdmin";
+
   return (
     <AlertDialog>
-      <AlertDialogTrigger className=" primary-button-white w-11/12  xl:w-2/3 mt-5 ms-5 md:ms-0">
-        <button>Book Now</button>
+      <AlertDialogTrigger className=" w-11/12  xl:w-2/3 mt-5 ms-5 md:ms-0">
+        <button className=" primary-button-white w-full" disabled={isAdminOrSuperAdmin}>Book Now</button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>

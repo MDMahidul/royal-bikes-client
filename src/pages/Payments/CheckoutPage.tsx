@@ -73,7 +73,7 @@ const CheckoutPage = () => {
   };
 
   return (
-    <div className="py-10 md:py-16 ">
+    <div className="py-16 ">
       <SectionHeader heading="Confirm Payment" />
       <Container>
         <div className="flex flex-col md:flex-row  justify-center items-start gap-5 gap-y-10">
@@ -108,12 +108,12 @@ const CheckoutPage = () => {
           <div className=" w-full md:w-2/5 ">
             <SlideInFromRight>
               <div className="shadow p-5 dark:bg-gray-600 rounded-md">
-                <p className="text-primary dark:text-white sm:text-2xl md:text-3xl font-semibold text-center pb-8 ">
+                <p className="text-primary dark:text-white text-2xl md:text-3xl font-semibold text-center pb-8 ">
                   Booking Summary
                 </p>
                 <div>
                   <div>
-                    <table className="w-full text-gray-600 dark:text-white font-medium">
+                    <table className="w-full text-gray-600 dark:text-white font-medium text-sm md:text-base">
                       <tbody>
                         <tr>
                           <td className=" ">Start Time:</td>
