@@ -14,7 +14,7 @@ const SectionHeader = ({ heading, position = "center" }: TSectionHeader) => {
 
   return (
     <SlideInFromLeft custom={1}>
-      <div className={`${alignmentClass} mx-auto pt-7 pb-3 md:py-10 `}>
+      <div className={`${alignmentClass} mx-auto pt-7 pb-3  md:py-10 `}>
         <h3 className="text-2xl sm:text-3xl md:text-4xl  text-primary dark:text-white py-4 font-semibold md:font-bold capitalize font-robotoSlab">
           {heading}
         </h3>

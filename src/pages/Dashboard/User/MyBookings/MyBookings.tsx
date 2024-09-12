@@ -37,7 +37,7 @@ const MyBookings = () => {
     data: bookingsData,
     isError,
     isLoading,
-  } = useGetMyBookingsQuery({ args: updatedParams, token });
+  } = useGetMyBookingsQuery({ args: updatedParams, token },{pollingInterval:30000});
   if (isLoading) {
     return <Loader height="h-[80vh]" />;
   }
@@ -100,15 +100,17 @@ const MyBookings = () => {
             )}
           </div>
         </div>
-        <FadeInUpAnimation>
-          <div className="mt-8">
-            <PaginationComponent
-              page={page}
-              handlePageChange={handlePageChange}
-              totalPage={totalPage}
-            />
-          </div>
-        </FadeInUpAnimation>
+        {bookingsData.data.length > 0 && (
+          <FadeInUpAnimation>
+            <div className="mt-8">
+              <PaginationComponent
+                page={page}
+                handlePageChange={handlePageChange}
+                totalPage={totalPage}
+              />
+            </div>
+          </FadeInUpAnimation>
+        )}
       </Container>
     </div>
   );

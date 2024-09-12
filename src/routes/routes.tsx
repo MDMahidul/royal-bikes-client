@@ -12,13 +12,14 @@ import TermsConditions from "@/pages/Terms&Policy/TermsConditions";
 import { createBrowserRouter } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 import BikeDetails from "@/pages/BikeDetails/BikeDetails";
-import BookingConfirm from "@/pages/BookingConfirm/BookingConfirm";
+import BookingConfirm from "@/pages/Payments/BookingConfirm";
 import Unauthorized from "@/components/Error/Unauthorized";
 import BikeMangement from "@/pages/Dashboard/Admin/BikeManagement/BikeMangement";
 import UserManagement from "@/pages/Dashboard/Admin/UserManagement/UserManagement";
-import CouponManagement from "@/pages/Dashboard/Admin/CouponManagement/CouponManagement";
-import BookingManagement from "@/pages/Dashboard/Admin/BookingManagement/BookingManagement";
 import MyBookings from "@/pages/Dashboard/User/MyBookings/MyBookings";
+import CheckoutPage from "@/pages/Payments/CheckoutPage";
+import BookingManagement from "@/pages/Dashboard/Admin/BookingManagement/BookingManagement";
+import CouponManagement from "@/pages/Dashboard/Admin/CouponManagement/CouponManagement";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute roles={["user"]}>
             <BookingConfirm />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "checkout/:id",
+        element: (
+          <ProtectedRoute roles={["user"]}>
+            <CheckoutPage />
           </ProtectedRoute>
         ),
       },

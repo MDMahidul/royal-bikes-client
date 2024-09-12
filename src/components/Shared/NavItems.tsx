@@ -23,7 +23,7 @@ const NavbarItems = () => {
       } else {
         setNavbarHeight("py-5");
         /* if homepage then set bg transparent by default */
-        setNavbarBg(isHomePage ? "bg-transparent" : "bg-white shadow-md");
+        setNavbarBg(isHomePage ? "md:bg-transparent" : "bg-white shadow-md");
       }
     };
     window.addEventListener("scroll", handleScroll);

@@ -10,12 +10,27 @@ import NoData from "../Error/NoData";
 import { TBooking } from "@/types/types";
 import { formatDateTime } from "@/utils/formatDateTime";
 import SlideInFromLeft from "../Animation/SlideFromLeft";
+import { useReturnBikeMutation } from "@/redux/api/booking/booking.api";
+import { useAppSelector } from "@/redux/hooks";
+import { useCurrentToken } from "@/redux/features/auth/authSlice";
+import { toast } from "sonner";
 
 type TBookingTableProps = {
   bookingsData: TBooking;
 };
 
 const BookingManagementTable = ({ bookingsData }: TBookingTableProps) => {
+  const [returnBike] = useReturnBikeMutation();
+  const token = useAppSelector(useCurrentToken);
+
+  const handleReturn = async(id:string) => {
+    try {
+      await returnBike({ id, token }).unwrap();
+      toast.success("Bike return successfully!");
+    } catch (error) {
+      toast.error(error?.data?.message);
+    }
+  };
   return (
     <div>
       {bookingsData?.length === 0 ? (
@@ -31,7 +46,7 @@ const BookingManagementTable = ({ bookingsData }: TBookingTableProps) => {
                   <TableHead className="text-center">Time</TableHead>
                   <TableHead className="text-center">Total</TableHead>
                   <TableHead className="text-center">Returned</TableHead>
-                  <TableHead className="text-center">Status</TableHead>
+                  <TableHead className="text-center">Payment</TableHead>
                   <TableHead className="text-center">Actions</TableHead>
                 </TableRow>
               </TableHeader>
@@ -41,10 +56,10 @@ const BookingManagementTable = ({ bookingsData }: TBookingTableProps) => {
                     <TableCell className="text-center">
                       <div className="text-left">
                         <div className="text-sm font-semibold text-primary dark:text-white">
-                          {booking.userId.name}
+                          {booking?.userId?.name}
                         </div>
                         <div className="font-medium text-xs text-gray-500 ">
-                          ID: {booking.userId.id}
+                          ID: {booking?.userId?.id}
                         </div>
                       </div>
                     </TableCell>
@@ -95,7 +110,10 @@ const BookingManagementTable = ({ bookingsData }: TBookingTableProps) => {
                         "N/A"
                       ) : (
                         <>
-                          <button className="primary-button-sm ">
+                          <button
+                            className="primary-button-sm "
+                            onClick={() => handleReturn(booking._id)}
+                          >
                             Calculate
                           </button>
                         </>

@@ -56,7 +56,7 @@ const BookingConfirm = () => {
         console.log(res);
         window.location.href = res.data.payment_url;
       } else {
-        toast.error("Order creation failed:", { duration: 2000 });
+        toast.error("Booking creation failed:", { duration: 2000 });
       }
     } catch (error: any) {
       console.log(error);

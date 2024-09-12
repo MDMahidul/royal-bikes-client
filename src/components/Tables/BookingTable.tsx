@@ -30,7 +30,7 @@ const BookingTable = ({ bookingsData }: TBookingTableProps) => {
                   <TableHead>Bike</TableHead>
                   <TableHead className="text-center">Time</TableHead>
                   <TableHead className="text-center">Total Cost</TableHead>
-                  <TableHead className="text-center">Status</TableHead>
+                  <TableHead className="text-center">Payment</TableHead>
                   <TableHead className="text-center">Actions</TableHead>
                 </TableRow>
               </TableHeader>
@@ -52,7 +52,7 @@ const BookingTable = ({ bookingsData }: TBookingTableProps) => {
                         </div>
                       </div>
                     </TableCell>
-                    <TableCell>
+                    <TableCell className="text-center">
                       <div>
                         <span className="font-medium">Start: </span>
                         {formatDateTime(booking.startTime)}
@@ -66,23 +66,25 @@ const BookingTable = ({ bookingsData }: TBookingTableProps) => {
                         )}
                       </div>
                     </TableCell>
-                    <TableCell>{booking.isReturned ? booking.totalCost : 0}</TableCell>
+                    <TableCell className="text-center">
+                      {booking.isReturned ? booking.totalCost : 0}
+                    </TableCell>
                     <TableCell
                       className={`text-${
                         booking.paymentStatus === "paid" ? "green" : "red"
-                      }-500 font-semibold`}
+                      }-500 font-semibold text-center`}
                     >
                       {booking.paymentStatus}
                     </TableCell>
 
-                    <TableCell>
+                    <TableCell className="text-center">
                       {booking.paymentStatus === "paid" ? (
                         "N/A"
                       ) : (
                         <>
                           <Link
-                            to="#"
-                            className={`primary-button-sm ${
+                            to={`/checkout/${booking._id}`}
+                            className={`primary-button-sm text-center ${
                               !booking.isReturned
                                 ? "opacity-50 cursor-not-allowed"
                                 : ""
