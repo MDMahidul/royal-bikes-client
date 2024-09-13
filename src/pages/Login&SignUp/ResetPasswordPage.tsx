@@ -63,7 +63,7 @@ const ResetPasswordPage = () => {
       </div>
       <div className="flex flex-col justify-center mx-auto gap-y-8">
         <div className=" text-center">
-          <h4 className="text-lg md:text-2xl font-semibold  text-primary">
+          <h4 className="text-lg md:text-2xl font-semibold  text-primary dark:text-white">
             Submit new password
           </h4>
         </div>

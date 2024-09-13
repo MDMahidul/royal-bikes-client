@@ -11,6 +11,7 @@ import SlideInFromLeft from "@/components/Animation/SlideFromLeft";
 import BookingManagementTable from "@/components/Tables/BookingManagementTable";
 import PaginationComponent from "@/components/Pagination/PaginationComponent";
 import FadeInUpAnimation from "@/components/Animation/FadeInUpAnimtaion";
+import { Helmet } from "react-helmet-async";
 
 const BookingManagement = () => {
   const token = useAppSelector(useCurrentToken);
@@ -54,6 +55,7 @@ const BookingManagement = () => {
 
   return (
     <div className="md:my-5 mb-20 sm:mb-40">
+      <Helmet title="Manage Bookings" />
       <Container>
         <DashboardHeader title="Manage Bookings" />
         <div>

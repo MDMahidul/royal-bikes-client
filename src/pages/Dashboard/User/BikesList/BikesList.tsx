@@ -13,6 +13,7 @@ import { FieldValues, useForm } from "react-hook-form";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import Loader from "@/components/Loader/Loader";
 import PaginationComponent from "@/components/Pagination/PaginationComponent";
+import { Helmet } from "react-helmet-async";
 
 const BikesList = () => {
   const [params, setParams] = useState<TQueryParams[]>([]);
@@ -58,6 +59,7 @@ const BikesList = () => {
  const totalPage = bikesData.meta.totalPage;
   return (
     <div className="md:my-5 mb-20 sm:mb-40 ">
+      <Helmet title="Bikes List" />
       <Container>
         <DashboardHeader title="Bikes List" />
         <div className="my-7 max-w-md mx-auto">

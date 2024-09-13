@@ -10,6 +10,7 @@ import { useGetSingleBikeQuery } from "@/redux/api/bikes/bikes.api";
 import { useAddBookingMutation } from "@/redux/api/booking/booking.api";
 import { useCurrentToken } from "@/redux/features/auth/authSlice";
 import { useAppSelector } from "@/redux/hooks";
+import { Helmet } from "react-helmet-async";
 import { FieldValues, useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { toast } from "sonner";
@@ -66,6 +67,7 @@ const BookingConfirm = () => {
 
   return (
     <div className="py-16 ">
+      <Helmet title="Booking Confirm" />
       <SectionHeader heading="Confirm your booking" />
       <Container>
         <div className="flex flex-col md:flex-row  justify-center items-start gap-5 gap-y-10">

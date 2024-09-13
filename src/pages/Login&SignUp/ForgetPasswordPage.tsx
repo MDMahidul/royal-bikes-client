@@ -47,7 +47,7 @@ const ForgetPasswordPage = () => {
       </div>
       <div className="flex flex-col justify-center  gap-y-8">
         <div className=" text-center">
-          <h4 className="text-lg md:text-2xl font-semibold  text-primary">
+          <h4 className="text-lg md:text-2xl font-semibold  text-primary dark:text-white">
             Submit your email to reset password
           </h4>
         </div>

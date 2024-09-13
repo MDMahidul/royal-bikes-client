@@ -1,10 +1,12 @@
 import SlideInFromLeft from "@/components/Animation/SlideFromLeft";
 import SlideInFromRight from "@/components/Animation/SlideFromRight";
 import ParallaxHeader from "@/components/SectionHeader/ParallaxHeader";
+import { Helmet } from "react-helmet-async";
 
 const TermsConditions = () => {
   return (
     <div className="py-10 md:py-16 ">
+      <Helmet title="Terms of Services" />
       <ParallaxHeader heading="Terms of Services" />
       <div className="max-w-5xl mx-auto px-5 mt-5">
         <div className="dark:text-white py-5 ">

@@ -31,6 +31,7 @@ import UpdateBikeModal from "@/components/Modal/UpdateBikeModal";
 import NoData from "@/components/Error/NoData";
 import { FaTimes } from "react-icons/fa";
 import PaginationComponent from "@/components/Pagination/PaginationComponent";
+import { Helmet } from "react-helmet-async";
 
 const BikeMangement = () => {
   const [params, setParams] = useState<TQueryParams[]>([]);
@@ -105,6 +106,7 @@ const BikeMangement = () => {
 
   return (
     <div className="md:my-5 mb-20 sm:mb-40 ">
+      <Helmet title="Manage Bikes" />
       <Container>
         <DashboardHeader title="Manage Bikes" />
         <div className="my-7 max-w-md mx-auto">

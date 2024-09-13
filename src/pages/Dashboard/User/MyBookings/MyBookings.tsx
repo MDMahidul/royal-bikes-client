@@ -12,6 +12,7 @@ import { useCurrentToken } from "@/redux/features/auth/authSlice";
 import { useAppSelector } from "@/redux/hooks";
 import { TQueryParams } from "@/types/global";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const MyBookings = () => {
   const token = useAppSelector(useCurrentToken);
@@ -21,13 +22,13 @@ const MyBookings = () => {
   const [activeTab, setActiveTab] = useState("unpaid");
 
   /* handle active tab */
-  useEffect(()=>{
+  useEffect(() => {
     if (activeTab === "unpaid") {
       setPayStatus("pending");
     } else if (activeTab === "paid") {
       setPayStatus("paid");
     }
-  },[activeTab])
+  }, [activeTab]);
   const updatedParams = [
     { name: "paymentStatus", value: payStatus },
     { name: "page", value: page },
@@ -37,7 +38,10 @@ const MyBookings = () => {
     data: bookingsData,
     isError,
     isLoading,
-  } = useGetMyBookingsQuery({ args: updatedParams, token },{pollingInterval:30000});
+  } = useGetMyBookingsQuery(
+    { args: updatedParams, token },
+    { pollingInterval: 30000 }
+  );
   if (isLoading) {
     return <Loader height="h-[80vh]" />;
   }
@@ -52,6 +56,7 @@ const MyBookings = () => {
   const totalPage = bookingsData.meta.totalPage;
   return (
     <div className="md:my-5 mb-20 sm:mb-40 ">
+      <Helmet title="My Bookings" />
       <Container>
         <DashboardHeader title="My Bookings" />
         <div>

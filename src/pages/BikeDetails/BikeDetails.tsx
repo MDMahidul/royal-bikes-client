@@ -14,6 +14,7 @@ import { GiFullMotorcycleHelmet, GiGps } from "react-icons/gi";
 import { FaBottleWater } from "react-icons/fa6";
 import ConfirmationModal from "@/components/Modal/ConfirmationModal";
 import FadeInUpAnimation from "@/components/Animation/FadeInUpAnimtaion";
+import { Helmet } from "react-helmet-async";
 
 const BikeDetails = () => {
   const { bikeId } = useParams();
@@ -53,6 +54,7 @@ const BikeDetails = () => {
  
   return (
     <div className="pt-28 md:pt-28">
+      <Helmet title={name} />
       <Container>
         <SlideInFromLeft>
           <BreadCrumb items={breadCrumbItems} />

@@ -9,6 +9,7 @@ import { useAppDispatch } from "@/redux/hooks";
 import { setUser, TUser } from "@/redux/features/auth/authSlice";
 import { verifyToken } from "@/utils/verifyToken";
 import ZoomInEffect from "@/components/Animation/ZoomInEffect";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [login, { isLoading }] = useLoginMutation();
@@ -51,6 +52,7 @@ const Login = () => {
 
   return (
     <>
+      <Helmet title="Login" />
       <div
         className="relative min-h-screen bg-cover bg-center "
         style={{

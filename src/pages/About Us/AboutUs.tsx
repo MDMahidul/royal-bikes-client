@@ -11,11 +11,13 @@ import StaffCard from "@/components/Cards/StaffCard";
 import Lottie from "lottie-react";
 import comuncation from "@/assets/data/com.json";
 import pin from "@/assets/data/pin.json";
+import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
 
   return (
     <div className="py-10 md:py-16 ">
+      <Helmet title="About Us"/>
       <ParallaxHeader heading="About Us" />
       <div className="max-w-5xl mx-auto px-5 mt-5">
         <div className="dark:text-white py-5 font-medium">

@@ -13,6 +13,7 @@ import {
 import { useCurrentToken } from "@/redux/features/auth/authSlice";
 import { useAppSelector } from "@/redux/hooks";
 import { formatDateTime } from "@/utils/formatDateTime";
+import { Helmet } from "react-helmet-async";
 import { FieldValues, useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { toast } from "sonner";
@@ -74,6 +75,7 @@ const CheckoutPage = () => {
 
   return (
     <div className="py-16 ">
+      <Helmet title="Confirm Payment" />
       <SectionHeader heading="Confirm Payment" />
       <Container>
         <div className="flex flex-col md:flex-row  justify-center items-start gap-5 gap-y-10">

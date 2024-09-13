@@ -7,6 +7,7 @@ import { useSignupMutation } from "@/redux/api/auth/auth.api";
 import { toast } from "sonner";
 import bannerImage from "@/assets/banner2.jpg";
 import ZoomInEffect from "@/components/Animation/ZoomInEffect";
+import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
   const [disabled, setDisabled] = useState(true);
@@ -49,6 +50,7 @@ const SignUp = () => {
 
   return (
     <>
+      <Helmet title="Signup" />
       <div
         className="relative min-h-screen bg-cover bg-center "
         style={{

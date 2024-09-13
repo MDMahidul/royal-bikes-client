@@ -51,7 +51,7 @@ const Bikes = () => {
   return (
     <div className="py-16">
       <Helmet>
-        <title>All Products</title>
+        <title>All Bikes</title>
       </Helmet>
       <SectionHeader heading={"Choose Your Bikes"} />
 

@@ -24,6 +24,7 @@ import { useAppSelector } from "@/redux/hooks";
 import { TQueryParams } from "@/types/global";
 import { TCoupon } from "@/types/types";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { toast } from "sonner";
 
 const CouponManagement = () => {
@@ -58,6 +59,7 @@ const CouponManagement = () => {
 
   return (
     <div className="md:my-5 mb-20 sm:mb-40 ">
+      <Helmet title="Manage Coupons" />
       <Container>
         <DashboardHeader title="Manage Bikes" />
         <div className="text-right md:px-10 my-5">
@@ -104,7 +106,10 @@ const CouponManagement = () => {
                             ? "Available"
                             : "Not Available"}
                         </TableCell>
-                        <TableCell>{coupon.discountValue} {coupon.discountType === 'fixed' ? '৳' : '%'}</TableCell>
+                        <TableCell>
+                          {coupon.discountValue}{" "}
+                          {coupon.discountType === "fixed" ? "৳" : "%"}
+                        </TableCell>
                         <TableCell>
                           {new Date(coupon.endDate).toLocaleDateString()}
                         </TableCell>

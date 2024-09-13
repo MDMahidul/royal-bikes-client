@@ -29,6 +29,7 @@ import PaginationComponent from "@/components/Pagination/PaginationComponent";
 import UpdateUserRole from "@/components/Modal/UpdateUserRoleModal";
 import { useAppSelector } from "@/redux/hooks";
 import DeleteModal from "@/components/Modal/DeleteModal";
+import { Helmet } from "react-helmet-async";
 
 
 const UserManagement = () => {
@@ -70,6 +71,7 @@ const UserManagement = () => {
 
   return (
     <div className="md:my-5 mb-20 sm:mb-40 ">
+      <Helmet title="Manage Users" />
       <Container>
         <DashboardHeader title="Manage Users" />
         {usersData?.data.length === 0 ? (
