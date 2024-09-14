@@ -3,7 +3,6 @@ import { baseApi } from "@/redux/api/baseApi";
 
 const userApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-
     getAllUsers: builder.query({
       query: (token) => ({
         method: "GET",
@@ -61,8 +60,13 @@ const userApi = baseApi.injectEndpoints({
       },
       invalidatesTags: ["user"],
     }),
-    
   }),
 });
 
-export const { useGetAllUsersQuery,useGetUserProfieQuery, useUpdateUserProfileMutation,useUpdateUserRoleMutation,useDeleteUserMutation } = userApi;
+export const {
+  useGetAllUsersQuery,
+  useGetUserProfieQuery,
+  useUpdateUserProfileMutation,
+  useUpdateUserRoleMutation,
+  useDeleteUserMutation,
+} = userApi;
