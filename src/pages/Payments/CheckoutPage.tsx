@@ -60,15 +60,12 @@ const CheckoutPage = () => {
   const handlePayment = async (id: string) => {
     try {
       const res = await makePayment({ id, token }).unwrap();
-      console.log({res});
       if (res.success) {
-        console.log(res);
         window.location.href = res.data.payment_url;
       } else {
         toast.error("Payment failed", { duration: 2000 });
       }
     } catch (error: any) {
-      console.log(error);
       toast.error(error.data?.message || "An error occurred");
     }
   };

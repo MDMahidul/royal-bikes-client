@@ -36,7 +36,7 @@ const BookingConfirm = () => {
   }
 
   // Watch the startTime input
-  const selectedTime = watch("startTime");
+  watch("startTime");
 
   // Get the current time
   const currentTime = new Date().toISOString().slice(0, 16); // format to 'yyyy-mm-ddThh:mm'
@@ -52,15 +52,12 @@ const BookingConfirm = () => {
     };
     try {
       const res = await addBooking({ bookingData, token }).unwrap();
-      console.log(res);
       if (res.success) {
-        console.log(res);
         window.location.href = res.data.payment_url;
       } else {
         toast.error("Booking creation failed:", { duration: 2000 });
       }
     } catch (error: any) {
-      console.log(error);
       toast.error(error.data.message);
     }
   };

@@ -33,7 +33,6 @@ const UpdateCouponModal = ({ coupon }: TUpdateModalProp) => {
   const [updateCoupon, {isLoading}] = useUpdateCouponMutation();
 
   const onSubmit = async (data: FieldValues) => {
-    console.log(data);
     try {
       await updateCoupon({ data,id:coupon._id, token }).unwrap();
       toast.success("Coupon Data Updated Successfully!");

@@ -34,7 +34,7 @@ const AddCouponModal = () => {
   };
 
   const onSubmit = async (data: FieldValues) => {
-    console.log(data);
+    
     try {
       await addCoupon({ data, token }).unwrap();
       toast.success("Bike Added Successfully!");

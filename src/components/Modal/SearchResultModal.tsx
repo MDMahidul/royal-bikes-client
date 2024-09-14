@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from "react";
 import { TBike } from "@/types/types";
 import BikeCard from "../Cards/BikeCard";
@@ -5,13 +6,12 @@ import { IoMdClose } from "react-icons/io";
 import NoData from "../Error/NoData";
 
 type TModalProp = {
-  bikes: TBike[];
+  bikes: any;
   isOpen: boolean;
   onClose: () => void;
 };
 
 const SearchResultModal = ({ bikes, isOpen, onClose }: TModalProp) => {
-  //console.log(bikes);
   
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {

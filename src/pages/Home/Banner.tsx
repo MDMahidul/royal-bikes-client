@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import bannerImage from "@/assets/banner3.jpg";
-import { FaMagnifyingGlass } from "react-icons/fa6";
 import bike from "@/assets/bikes/bike1.webp";
 import bike2 from "@/assets/bikes/bike2.webp";
 import bike3 from "@/assets/bikes/bike3.webp";
@@ -7,57 +7,9 @@ import SlideInFromLeft from "@/components/Animation/SlideFromLeft";
 import Container from "@/components/Container/Container";
 import SlideInFromRight from "@/components/Animation/SlideFromRight";
 import ZoomInEffect from "@/components/Animation/ZoomInEffect";
-import SearchResultModal from "@/components/Modal/SearchResultModal";
-import { TQueryParams } from "@/types/global";
-import { ChangeEvent, useState } from "react";
-import { useGetAvailableBikesQuery } from "@/redux/api/bikes/bikes.api";
-import { FiLoader } from "react-icons/fi";
-import { FieldValues, useForm } from "react-hook-form";
-import { toast } from "sonner";
 import SearchBar from "@/components/SearchBar/SearchBar";
 
 const Banner = () => {
-  const [params, setParams] = useState<TQueryParams[]>([]);
-  const [searchType, setSearchType] = useState<string>("name");
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [shouldFetch, setShouldFetch] = useState<boolean>(false);
-
-  const { register, handleSubmit, reset } = useForm();
-
-  const {
-    data: bikesData,
-    isLoading,
-    isError,
-  } = useGetAvailableBikesQuery([...params], { skip: !shouldFetch });
-  if (isLoading) {
-    toast(
-      <p className="flex items-center gap-3 font-semibold">
-        <span className="animate-spin">
-          <FiLoader />
-        </span>
-        Searching...
-      </p>,
-      { duration: 1000 }
-    );
-  }
-  if (isError) {
-    toast.error("Something went wrong!", { duration: 2000 });
-  }
-
-  const handleSearchTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setSearchType(e.target.value);
-  };
-
-  const handleSearch = (data: FieldValues) => {
-    const searchTerm = data[searchType];
-    const updatedParams = [{ name: searchType, value: searchTerm }];
-
-    setParams(updatedParams.filter((param) => param.value));
-    setShouldFetch(true);
-    setIsModalOpen(true);
-    reset();
-  };
-
   return (
     <div
       className="relative lg:min-h-screen 2xl:min-h-[730px] bg-cover bg-center bg-fixed"
@@ -100,13 +52,6 @@ const Banner = () => {
             </ZoomInEffect>
           </div>
         </Container>
-        {/*  {bikesData && (
-          <SearchResultModal
-            bikes={bikesData}
-            isOpen={isModalOpen}
-            onClose={() => setIsModalOpen(false)}
-          />
-        )} */}
       </div>
     </div>
   );

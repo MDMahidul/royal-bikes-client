@@ -1,4 +1,3 @@
-import SlideInFromRight from "@/components/Animation/SlideFromRight";
 import Container from "@/components/Container/Container";
 import SectionHeader from "@/components/SectionHeader/SectionHeader";
 import couple from "@/assets/bikes/couple.webp";

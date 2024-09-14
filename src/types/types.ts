@@ -1,4 +1,15 @@
-import { TUser } from "@/redux/features/auth/authSlice";
+
+export type TUser = {
+  _id?:string;
+  name: string;
+  pImage: string;
+  id: string;
+  email: string;
+  role: string;
+  isFirstRide: boolean;
+  iat: number;
+  exp: number;
+};
 
 export type TBike = {
   _id?: string;
@@ -27,6 +38,7 @@ export type TCoupon = {
 };
 
 export type TBooking = {
+  _id?:string;
   userId?: TUser;
   bikeId: TBike;
   startTime: Date;
@@ -37,4 +49,4 @@ export type TBooking = {
   transactionId: string;
   paymentStatus: string;
   isReturned: boolean;
-};
+}; 

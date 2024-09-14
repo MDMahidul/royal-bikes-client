@@ -95,12 +95,12 @@ const MyBookings = () => {
           <div className="mt-8">
             {activeTab === "unpaid" && (
               <div id="unpaid">
-                <BookingTable bookingsData={bookingsData.data} />
+                <BookingTable bookingsData={bookingsData} />
               </div>
             )}
             {activeTab === "paid" && (
               <div id="paid">
-                <BookingTable bookingsData={bookingsData.data} />
+                <BookingTable bookingsData={bookingsData} />
               </div>
             )}
           </div>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Table,
   TableBody,
@@ -15,11 +16,7 @@ import { useAppSelector } from "@/redux/hooks";
 import { useCurrentToken } from "@/redux/features/auth/authSlice";
 import { toast } from "sonner";
 
-type TBookingTableProps = {
-  bookingsData: TBooking;
-};
-
-const BookingManagementTable = ({ bookingsData }: TBookingTableProps) => {
+const BookingManagementTable = ({ bookingsData }: any) => {
   const [returnBike] = useReturnBikeMutation();
   const token = useAppSelector(useCurrentToken);
 
@@ -27,13 +24,13 @@ const BookingManagementTable = ({ bookingsData }: TBookingTableProps) => {
     try {
       await returnBike({ id, token }).unwrap();
       toast.success("Bike return successfully!");
-    } catch (error) {
+    } catch (error:any) {
       toast.error(error?.data?.message);
     }
   };
   return (
     <div>
-      {bookingsData?.length === 0 ? (
+      {bookingsData?.data.length === 0 ? (
         <NoData />
       ) : (
         <SlideInFromLeft>
@@ -51,7 +48,7 @@ const BookingManagementTable = ({ bookingsData }: TBookingTableProps) => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {bookingsData?.map((booking: TBooking, index: number) => (
+                {bookingsData?.data.map((booking: TBooking, index: number) => (
                   <TableRow key={index}>
                     <TableCell className="text-center">
                       <div className="text-left">
@@ -112,7 +109,7 @@ const BookingManagementTable = ({ bookingsData }: TBookingTableProps) => {
                         <>
                           <button
                             className="primary-button-sm "
-                            onClick={() => handleReturn(booking._id)}
+                            onClick={() => handleReturn(booking._id!)}
                           >
                             Calculate
                           </button>

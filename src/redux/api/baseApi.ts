@@ -13,7 +13,7 @@ import { logOut, setUser } from "../features/auth/authSlice";
 import { TResponse } from "@/types/global";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "http://localhost:5000/api",
+  baseUrl: "https://bike-rental-service-server-puce.vercel.app/api",
   /* to set cookies data */
   credentials: "include",
   /* send token through header to server */
@@ -49,10 +49,13 @@ const baseQueryWithRefreshToken: BaseQueryFn<
   }
 
   if (result?.error?.status === 401) {
-    const res = await fetch("http://localhost:5000/api/auth/refresh-token", {
-      method: "POST",
-      credentials: "include",
-    });
+    const res = await fetch(
+      "https://bike-rental-service-server-puce.vercel.app/api/auth/refresh-token",
+      {
+        method: "POST",
+        credentials: "include",
+      }
+    );
     const data = await res.json();
 
     /* if refreshtoken expired */

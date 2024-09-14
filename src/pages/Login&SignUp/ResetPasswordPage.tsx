@@ -39,7 +39,7 @@ const ResetPasswordPage = () => {
         newPassword,
         token,
       }).unwrap();
-      console.log(result);
+      
       reset();
       toast.success("Password updated successfully !", {
         duration: 2000,

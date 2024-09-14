@@ -26,7 +26,6 @@ const userApi = baseApi.injectEndpoints({
     }),
     updateUserProfile: builder.mutation({
       query: ({ user, token }) => {
-        console.log(user);
         return {
           method: "PUT",
           url: `/user/me`,

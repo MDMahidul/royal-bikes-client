@@ -6,10 +6,11 @@ import { useLoginMutation } from "@/redux/api/auth/auth.api";
 import { ImSpinner9 } from "react-icons/im";
 import { toast } from "sonner";
 import { useAppDispatch } from "@/redux/hooks";
-import { setUser, TUser } from "@/redux/features/auth/authSlice";
+import { setUser } from "@/redux/features/auth/authSlice";
 import { verifyToken } from "@/utils/verifyToken";
 import ZoomInEffect from "@/components/Animation/ZoomInEffect";
 import { Helmet } from "react-helmet-async";
+import { TUser } from "@/types/types";
 
 const Login = () => {
   const [login, { isLoading }] = useLoginMutation();
@@ -31,7 +32,7 @@ const Login = () => {
     try {
       const result = await login(userInfo).unwrap();
       const user = verifyToken(result.data.accessToken) as TUser;
-      console.log(user);
+      
 
       dispatch(setUser({ user: user, token: result.data.accessToken }));
 

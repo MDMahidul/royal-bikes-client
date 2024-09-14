@@ -21,7 +21,6 @@ import NoData from "@/components/Error/NoData";
 import FadeInUpAnimation from "@/components/Animation/FadeInUpAnimtaion";
 import {
   selectCurrentUser,
-  TUser,
   useCurrentToken,
 } from "@/redux/features/auth/authSlice";
 import SlideInFromLeft from "@/components/Animation/SlideFromLeft";
@@ -30,6 +29,7 @@ import UpdateUserRole from "@/components/Modal/UpdateUserRoleModal";
 import { useAppSelector } from "@/redux/hooks";
 import DeleteModal from "@/components/Modal/DeleteModal";
 import { Helmet } from "react-helmet-async";
+import { TUser } from "@/types/types";
 
 
 const UserManagement = () => {

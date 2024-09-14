@@ -58,7 +58,7 @@ const UpdateBikeModal = ({ bike }: TUpdateModalProp) => {
         imageUrl = imgData.data.display_url;
       }
       const updateInfo = { ...data, image: imageUrl };
-      console.log(updateInfo);
+       
       await updateBike({ updateInfo, id:_id, token }).unwrap();
       toast.success("Bike Data Updated Successfully!");
       setIsOpen(false);

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Table,
   TableBody,
@@ -12,14 +13,10 @@ import { formatDateTime } from "@/utils/formatDateTime";
 import SlideInFromLeft from "../Animation/SlideFromLeft";
 import { Link } from "react-router-dom";
 
-type TBookingTableProps = {
-  bookingsData: TBooking;
-};
-
-const BookingTable = ({ bookingsData }: TBookingTableProps) => {
+const BookingTable = ({ bookingsData }: any) => {
   return (
     <div>
-      {bookingsData?.length === 0 ? (
+      {bookingsData?.data.length === 0 ? (
         <NoData />
       ) : (
         <SlideInFromLeft>
@@ -35,7 +32,7 @@ const BookingTable = ({ bookingsData }: TBookingTableProps) => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {bookingsData?.map((booking: TBooking, index: number) => (
+                {bookingsData?.data.map((booking: TBooking, index: number) => (
                   <TableRow key={index}>
                     <TableCell className="flex flex-col gap-y-1 sm:flex-row  sm:items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                       <img

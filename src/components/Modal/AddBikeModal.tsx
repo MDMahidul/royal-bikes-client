@@ -44,7 +44,7 @@ const AddBikeModal = () => {
         return; // Exit if image upload fails
       }
       const bikeData = { ...data, image: imageUrl };
-      console.log(bikeData);
+       
       await addBike({ bikeData, token }).unwrap();
       toast.success("Bike Added Successfully!");
       setIsOpen(false);

@@ -18,7 +18,6 @@ const ProtectedRoute = ({ children, roles }: ProtectedRouteProps) => {
   const location = useLocation();
 
   if (!token) {
-    console.log("object");
     toast.error("Plese login first to continue!", { duration: 2000 });
     return <Navigate to="/login" state={{ form: location }} replace={true} />;
   }

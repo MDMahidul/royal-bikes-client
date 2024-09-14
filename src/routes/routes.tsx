@@ -22,11 +22,13 @@ import BookingManagement from "@/pages/Dashboard/Admin/BookingManagement/Booking
 import CouponManagement from "@/pages/Dashboard/Admin/CouponManagement/CouponManagement";
 import ForgetPasswordPage from "@/pages/Login&SignUp/ForgetPasswordPage";
 import ResetPasswordPage from "@/pages/Login&SignUp/ResetPasswordPage";
+import ErrorPage from "@/components/Error/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
       { path: "/bikes", element: <Bikes /> },
@@ -82,31 +84,59 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Profile />,
+        element: (
+          <ProtectedRoute roles={["superAdmin", "admin", "user"]}>
+            <Profile />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "bikeslist",
-        element: <BikesList />,
+        element: (
+          <ProtectedRoute roles={["superAdmin", "admin", "user"]}>
+            <BikesList />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "manage-bikes",
-        element: <BikeMangement />,
+        element: (
+          <ProtectedRoute roles={["superAdmin", "admin"]}>
+            <BikeMangement />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "manage-users",
-        element: <UserManagement />,
+        element: (
+          <ProtectedRoute roles={["superAdmin", "admin"]}>
+            <UserManagement />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "manage-rentals",
-        element: <BookingManagement />,
+        element: (
+          <ProtectedRoute roles={["superAdmin", "admin"]}>
+            <BookingManagement />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "manage-coupons",
-        element: <CouponManagement />,
+        element: (
+          <ProtectedRoute roles={["superAdmin", "admin"]}>
+            <CouponManagement />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "my-bookings",
-        element: <MyBookings />,
+        element: (
+          <ProtectedRoute roles={["user"]}>
+            <MyBookings />
+          </ProtectedRoute>
+        ),
       },
     ],
   },

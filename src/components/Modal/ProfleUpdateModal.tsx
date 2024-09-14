@@ -25,7 +25,7 @@ const ProfileUpdateModal = ({ user }: any) => {
   const onSubmit = async (data: FieldValues) => {
     setLoading(true);
     try {
-      let imageUrl = pImage;
+      let imageUrl = '';
       /* check if no image select */
       if (data.pImage && data.pImage.length > 0) {
         const image = data.pImage[0];

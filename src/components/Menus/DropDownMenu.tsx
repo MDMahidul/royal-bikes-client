@@ -3,7 +3,6 @@ import { MdDashboard } from "react-icons/md";
 import {
   FaSignInAlt,
   FaSignOutAlt,
-  FaUserAlt,
   FaRegBell,
   FaUserPlus,
 } from "react-icons/fa";

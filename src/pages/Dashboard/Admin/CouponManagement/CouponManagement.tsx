@@ -25,7 +25,6 @@ import { TQueryParams } from "@/types/global";
 import { TCoupon } from "@/types/types";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { toast } from "sonner";
 
 const CouponManagement = () => {
   const [params] = useState<TQueryParams[]>([]);
