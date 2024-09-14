@@ -34,7 +34,7 @@ const ResetPasswordPage = () => {
     const newPassword = data.password;
 
     try {
-      const result = await resetpassword({
+      await resetpassword({
         email,
         newPassword,
         token,
